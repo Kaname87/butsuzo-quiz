@@ -8,14 +8,14 @@ import {
 
 import QuizStart from './QuizStart';
 import QuizOnGoing from './QuizOnGoing';
-import QuizFinished from './QuizFinished';
+import QuizReview from './QuizReview';
 
 export default class Main extends Component {
   render() {
     let main = null;
     if (this.props.showReview) {
       main = (
-        <QuizFinished
+        <QuizReview
           onPressStart={this.props.onPressStart}
           lastQuizNumber={this.props.lastQuizNumber}
           correctNumber={this.props.correctNumber}
