@@ -8,7 +8,8 @@ import {
  } from 'react-native';
 import AnswerOptionsContainer from './AnswerOptionsContainer';
 import Quiz from './Quiz';
-//import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
+
+import Header from './Header';
 
 import data from './data.json'
 
@@ -74,6 +75,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Header />
         <View style={styles.progressBar}>
           <Text>Prpgress Bar</Text>
           <Text>{this.state.number}/{maxQuestion}</Text>
@@ -100,9 +102,10 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#f7f7f7',
     // backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
   progressBar: {
     flex: 1,
