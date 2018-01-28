@@ -16,7 +16,7 @@ export default class AnswerOptionsContainer extends Component {
     render() {
       return (
         <View style={{
-            flex: 1,
+            flex: 5,
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
