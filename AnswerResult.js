@@ -12,8 +12,8 @@ const AnswerResult = ({
   let resultText = <Text></Text>; // blank 
   if (showResult) {
     resultText = isCorrect ? 
-      <Text style={styles.correct}>正</Text> 
-    : <Text style={styles.wrong}>誤</Text>;
+      <Text style={styles.correct}>○</Text> 
+    : <Text style={styles.wrong}>×</Text>;
   }
 
   return (
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   wrong: {
     color: 'red', 
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
   },
 });

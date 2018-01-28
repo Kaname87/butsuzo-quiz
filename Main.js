@@ -13,7 +13,7 @@ import QuizFinished from './QuizFinished';
 export default class Main extends Component {
   render() {
     let main = null;
-    if (this.props.isFinished) {
+    if (this.props.showReview) {
       main = (
         <QuizFinished
           onPressStart={this.props.onPressStart}
@@ -24,6 +24,7 @@ export default class Main extends Component {
     } else if (this.props.isStarted) {
         main = (
           <QuizOnGoing
+            isFinished={this.props.isFinished}
             name={this.props.name}
             place={this.props.place}
             number={this.props.number}
@@ -33,6 +34,7 @@ export default class Main extends Component {
             showResult={this.props.showResult}
             isCorrect={this.props.isCorrect}
             onPressQuit={this.props.onPressQuit}
+            onPressShowReview={this.props.onPressShowReview}
           />
         );
     } else {

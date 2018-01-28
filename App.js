@@ -5,11 +5,8 @@ import {
   View,
   Alert,
  } from 'react-native';
-
 import Header from './Header';
 import Main from './Main';
-
-
 import data from './data.json'
 
 const lastQuizNumber = 3;
@@ -23,17 +20,19 @@ export default class App extends Component {
       correctNumber: 0,
       showResult: false,
       isCorrect: false,
-      quizSet: this.getNewQuizSet(0),
+      quizSet: this._getNewQuizSet(0),
       isFinished: false,
       isStarted: false,
+      showReview: false,
     }
 
     this._onSelectAnswer = this._onSelectAnswer.bind(this);
     this._onPressStart = this._onPressStart.bind(this);
     this._onPressQuit = this._onPressQuit.bind(this);
+    this._onPressShowReview = this._onPressShowReview.bind(this);
   }
 
-  getNewQuizSet(idx) {
+  _getNewQuizSet(idx) {
     return data.quizSet[idx] || data.quizSet[0];
   }
 
@@ -51,8 +50,9 @@ export default class App extends Component {
           correctNumber: 0,
           showResult: false,
           isCorrect: false,
-          quizSet: this.getNewQuizSet(0),
+          quizSet: this._getNewQuizSet(0),
           isFinished: false,
+          showReview: false,
         };
       }
     });
@@ -68,15 +68,37 @@ export default class App extends Component {
     });
   }
 
+  _onPressShowReview() {
+    this.setState(prevState => {
+      if (!prevState.showReview) {
+        return {
+          showReview: true,
+        };
+      }
+    });
+  }
+
   _onSelectAnswer(id){
     const isCorrect = this._checkAnswer(id);
 
     this.setState(prevState => {
-      if (prevState.number === this.state.number && !prevState.showResult) {
-        const newState = {
-          number: prevState.number + 1,
-          showResult: true,
-          isFinished: prevState.number === lastQuizNumber,
+      if (
+        prevState.number === this.state.number
+        // && !prevState.showResult
+        && prevState.number <= lastQuizNumber
+      ) {
+        const showResult = true;
+        let newState = null;
+        if (prevState.number === lastQuizNumber) {
+          newState = {
+            showResult,
+            isFinished: true,
+          }
+        } else {
+          newState = {
+            showResult,
+            number: prevState.number + 1,
+          }
         }
 
         if (isCorrect) {
@@ -94,13 +116,15 @@ export default class App extends Component {
       }
     })
 
-    // 若干遅くよみとる TODO: 問題がおわったらよまない
-    setTimeout(() => {
-      this.setState(prevState =>({
-        quizSet: this.getNewQuizSet(prevState.number - 1),
-        showResult: false,
-      }))}, 1000
-    )
+    if (this.state.number < lastQuizNumber) {
+      // 若干遅くよみとる
+      setTimeout(() => {
+        this.setState(prevState =>({
+          quizSet: this._getNewQuizSet(prevState.number - 1),
+          showResult: false,
+        }))}, 1000
+      )
+    }
   }
 
   render() {
@@ -118,6 +142,8 @@ export default class App extends Component {
           lastQuizNumber={lastQuizNumber}
           onPressStart={this._onPressStart}
           onPressQuit={this._onPressQuit}
+          onPressShowReview={this._onPressShowReview}
+          showReview={this.state.showReview}
           answerOptions={this.state.quizSet.answerOptions}
           onSelectAnswer={this._onSelectAnswer}
           showResult={this.state.showResult}

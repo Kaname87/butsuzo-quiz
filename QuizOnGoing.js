@@ -20,13 +20,26 @@ const QuizOnGoing = ({
   showResult,
   isCorrect,
   onPressQuit,
+  onPressShowReview,
   lastQuizNumber,
+  isFinished,
 }) => {
+  const button = isFinished ?
+    <Button
+      onPress={onPressShowReview}
+      title="結果確認"
+    />
+  : <Button
+      onPress={onPressQuit}
+      title="中止"
+  />
+
   return (
     <View style={styles.container}>
       <ProgressBar 
         lastQuizNumber={lastQuizNumber}
         number={number}
+        isFinished={isFinished}
       />
       <Quiz
         name={name}
@@ -42,10 +55,7 @@ const QuizOnGoing = ({
         showResult={showResult}
         isCorrect={isCorrect}
       />
-      <Button
-        onPress={onPressQuit}
-        title="中止"
-      />
+      {button}
     </View>
   );
 }
