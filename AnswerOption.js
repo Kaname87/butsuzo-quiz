@@ -8,7 +8,7 @@ import { StyleSheet, Text, View,
 export default class AnswerOption extends Component {
     render() {
       return (
-        <TouchableOpacity onPress={this.props.onPressButton}>
+        <TouchableOpacity onPress={() => this.props.onPressButton(this.props.id) }>
           <View style={{
             width: this.props.width,
             height: this.props.height,
@@ -16,15 +16,12 @@ export default class AnswerOption extends Component {
             borderWidth: 0.5,
             borderColor: '#d6d7da',
           }}>
-          {this.props.option &&
-            <Image source={{uri: this.props.option.uri}}
+            <Image source={{uri: this.props.uri}}
               style={{
-                width: this.props.width, 
+                width: this.props.width,
                 height: this.props.height,
                 resizeMode: 'contain',
               }} />
-          }
-
           </View>
         </TouchableOpacity>
       );

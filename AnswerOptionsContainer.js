@@ -4,22 +4,20 @@ import { StyleSheet, Text, View,
   TouchableOpacity,
  } from 'react-native';
  import AnswerOption from './AnswerOption';
+ 
 //import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
 const optionHeight = 200;
 const optionWidth = 200;
 
 export default class AnswerOptionsContainer extends Component {
-    _onPressButton() {
-      Alert.alert('You tapped the button!')
-    }
-    
     _makeAnswerOption(option) {
       return <AnswerOption 
         key={option.id}
-        onPressButton={this._onPressButton}
+        onPressButton={this.props.onPressButton}
         width={optionHeight}
         height={optionWidth}
-        option={option}
+        id={option.id}
+        uri={option.uri}
       />
     }
     
@@ -45,8 +43,6 @@ export default class AnswerOptionsContainer extends Component {
             alignItems: 'center',
             // justifyContent: 'space-between',
           }}>
-          
-          
           <View style={{
               flex: 1,
               flexDirection: 'row',
