@@ -9,14 +9,16 @@ const AnswerResult = ({
   showResult,
   isCorrect,
 }) => {
-  let resultText = ''; // blank 
+  let resultText = <Text></Text>; // blank 
   if (showResult) {
-    resultText = isCorrect ? "正解" : "不正解";
+    resultText = isCorrect ? 
+      <Text style={styles.correct}>正</Text> 
+    : <Text style={styles.wrong}>誤</Text>;
   }
 
   return (
     <View style={styles.container}>
-      <Text>{resultText}</Text>
+      {resultText}
     </View>
   )
  }
@@ -34,10 +36,14 @@ const styles = StyleSheet.create({
     alignItems:'center',
     borderColor:'rgba(0,0,0,0.1)'
   },
-  header: {
-    alignSelf:'center', 
-    marginLeft:10, 
-    color:'#444', 
-    fontSize:25,
-  }
+  correct: {
+    color: 'limegreen', 
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  wrong: {
+    color: 'red', 
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
 });
