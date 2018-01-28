@@ -6,8 +6,8 @@ import { StyleSheet, Text, View,
  import AnswerOption from './AnswerOption';
  
 //import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
-const optionHeight = 200;
-const optionWidth = 200;
+const optionHeight = 170;
+const optionWidth = 170;
 
 export default class AnswerOptionsContainer extends Component {
     _makeAnswerOption(option) {
@@ -22,45 +22,19 @@ export default class AnswerOptionsContainer extends Component {
     }
     
     render() {
-  
-      const evenOptions = this.props.anserOptions
-        .filter((option, i) => (i % 2 === 0))
-        .map(option => {
-          return this._makeAnswerOption(option)
-      });
-      
-      const oddOptions = this.props.anserOptions
-        .filter((option, i) => (i % 2 !== 0))
+        const options = this.props.anserOptions
         .map(option => {
           return this._makeAnswerOption(option)
       });
       
       return (
         <View style={{
-            flex: 5,
-            flexDirection: 'column',
-            // justifyContent: 'center',
-            alignItems: 'center',
-            // justifyContent: 'space-between',
-          }}>
-          <View style={{
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'flex-end',
-              // justifyContent: 'space-between',
-          }}>
-            {evenOptions}
-          </View>
-          <View style={{
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'flex-start',
-              // justifyContent: 'space-between',
-            }}>
-            {oddOptions}
-          </View>
+            flex: 4,
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+        }}>
+          {options}
         </View>
       );
     }

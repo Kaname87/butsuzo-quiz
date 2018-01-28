@@ -12,14 +12,17 @@ export default class AnswerOption extends Component {
           <View style={{
             width: this.props.width,
             height: this.props.height,
+            // flex: 1,
             borderRadius: 4,
             borderWidth: 0.5,
             borderColor: '#d6d7da',
+            alignItems: 'stretch',
           }}>
             <Image source={{uri: this.props.uri}}
               style={{
-                width: this.props.width,
-                height: this.props.height,
+                flex: 1,
+                // width: this.props.width,
+                // height: this.props.height,
                 resizeMode: 'contain',
               }} />
           </View>
