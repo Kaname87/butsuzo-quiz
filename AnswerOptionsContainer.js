@@ -13,37 +13,28 @@ export default class AnswerOptionsContainer extends Component {
       Alert.alert('You tapped the button!')
     }
     
+    _makeAnswerOption(option) {
+      return <AnswerOption 
+        key={option.id}
+        onPressButton={this._onPressButton}
+        width={optionHeight}
+        height={optionWidth}
+        option={option}
+      />
+    }
     
     render() {
   
       const evenOptions = this.props.anserOptions
         .filter((option, i) => (i % 2 === 0))
         .map(option => {
-          return (
-            <AnswerOption 
-              key={option.id}
-              onPressButton={this._onPressButton}
-              width={optionHeight}
-              height={optionWidth}
-              backgroundColor={'yellow'}
-              option={option}
-            />
-          )
+          return this._makeAnswerOption(option)
       });
-      // console.log(evenOptions);
+      
       const oddOptions = this.props.anserOptions
         .filter((option, i) => (i % 2 !== 0))
         .map(option => {
-          return (
-            <AnswerOption 
-              key={option.id}
-              onPressButton={this._onPressButton}
-              width={optionHeight}
-              height={optionWidth}
-              backgroundColor={'yellow'}
-              option={option}
-            />
-          )
+          return this._makeAnswerOption(option)
       });
       
       return (
