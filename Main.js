@@ -28,7 +28,7 @@ export default class Main extends Component {
             place={this.props.place}
             number={this.props.number}
             answerOptions={this.props.answerOptions}
-            onPressButton={this.props.onPressButton}
+            onSelectAnswer={this.props.onSelectAnswer}
             showResult={this.props.showResult}
             isCorrect={this.props.isCorrect}
             onPressQuit={this.props.onPressQuit}

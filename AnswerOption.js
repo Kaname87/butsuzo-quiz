@@ -10,7 +10,7 @@ export default class AnswerOption extends Component {
       return (
         <TouchableOpacity
           disabled={this.props.showResult}
-          onPress={() => this.props.onPressButton(this.props.id)}
+          onPress={() => this.props.onSelectAnswer(this.props.id)}
         >
           <View style={{
             width: this.props.width,

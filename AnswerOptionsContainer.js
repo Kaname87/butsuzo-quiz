@@ -13,7 +13,7 @@ export default class AnswerOptionsContainer extends Component {
     _makeAnswerOption(option) {
       return <AnswerOption 
         key={option.id}
-        onPressButton={this.props.onPressButton}
+        onSelectAnswer={this.props.onSelectAnswer}
         showResult={this.props.showResult}
         width={optionHeight}
         height={optionWidth}

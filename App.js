@@ -28,7 +28,7 @@ export default class App extends Component {
       isStarted: false,
     }
 
-    this._onPressButton = this._onPressButton.bind(this);
+    this._onSelectAnswer = this._onSelectAnswer.bind(this);
     this._onPressStart = this._onPressStart.bind(this);
     this._onPressQuit = this._onPressQuit.bind(this);
   }
@@ -68,7 +68,7 @@ export default class App extends Component {
     });
   }
 
-  _onPressButton(id){
+  _onSelectAnswer(id){
     const isCorrect = this._checkAnswer(id);
 
     this.setState(prevState => {
@@ -119,7 +119,7 @@ export default class App extends Component {
           onPressStart={this._onPressStart}
           onPressQuit={this._onPressQuit}
           answerOptions={this.state.quizSet.answerOptions}
-          onPressButton={this._onPressButton}
+          onSelectAnswer={this._onSelectAnswer}
           showResult={this.state.showResult}
         />
       </View>

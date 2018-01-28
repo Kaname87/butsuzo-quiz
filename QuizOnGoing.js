@@ -16,7 +16,7 @@ const QuizOnGoing = ({
   place,
   number,
   answerOptions,
-  onPressButton,
+  onSelectAnswer,
   showResult,
   isCorrect,
   onPressQuit,
@@ -31,7 +31,7 @@ const QuizOnGoing = ({
       />
       <AnswerOptionsContainer
         answerOptions={answerOptions}
-        onPressButton={onPressButton}
+        onSelectAnswer={onSelectAnswer}
         showResult={showResult}
       />
       <AnswerResult
