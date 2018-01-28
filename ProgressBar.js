@@ -26,16 +26,16 @@ export default class ProgressBar extends Component {
 
   render() {
     return ( 
-      <View style={stylesss.container} >
-        <View style={stylesss.progressBar} />
-         <View style={[stylesss.progressBarLeft, {flex:this.state.progress}]} />
-        <View style={[stylesss.progressBarRight, {flex:100 - this.state.progress}]} />
+      <View style={styles.container} >
+        <View style={styles.progressBar} />
+         <View style={[styles.progressBarLeft, {flex:this.state.progress}]} />
+        <View style={[styles.progressBarRight, {flex:100 - this.state.progress}]} />
        </View>
    );
   }
 }
 
-const stylesss = {
+const styles = {
   container: {     
      flex: 0.3,
      flexDirection: 'row',
