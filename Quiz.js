@@ -15,7 +15,7 @@ const Quiz = ({
   return (
     <View style={styles.quizContainer}>
       <Text style={styles.quizNumber}>第{number}門</Text>
-      <Text style={styles.quizText}>{place}の{name}は？</Text>
+      <Text style={styles.quizText}>{place}の{name}はどれ？</Text>
     </View> 
   )
  }
@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   quizNumber: {
-    fontSize:15,
+    fontSize: 15,
   },
   quizText: {
-    fontSize:30,
+    fontSize: 25,
     fontWeight: 'bold',
   },
 });
