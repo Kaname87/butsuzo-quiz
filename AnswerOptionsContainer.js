@@ -21,11 +21,10 @@ export default class AnswerOptionsContainer extends Component {
         uri={option.uri}
       />
     }
-    
+
     render() {
-        const options = this.props.answerOptions
-        .map(option => {
-          return this._makeAnswerOption(option)
+      const options = this.props.answerOptions.map(option => {
+        return this._makeAnswerOption(option)
       });
       
       return (
