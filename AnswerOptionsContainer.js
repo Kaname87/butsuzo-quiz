@@ -14,6 +14,7 @@ export default class AnswerOptionsContainer extends Component {
       return <AnswerOption 
         key={option.id}
         onPressButton={this.props.onPressButton}
+        showResult={this.props.showResult}
         width={optionHeight}
         height={optionWidth}
         id={option.id}

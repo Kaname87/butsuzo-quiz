@@ -8,7 +8,10 @@ import { StyleSheet, Text, View,
 export default class AnswerOption extends Component {
     render() {
       return (
-        <TouchableOpacity onPress={() => this.props.onPressButton(this.props.id) }>
+        <TouchableOpacity
+          disabled={this.props.showResult}
+          onPress={() => this.props.onPressButton(this.props.id)}
+        >
           <View style={{
             width: this.props.width,
             height: this.props.height,

@@ -32,6 +32,7 @@ const QuizOnGoing = ({
       <AnswerOptionsContainer
         answerOptions={answerOptions}
         onPressButton={onPressButton}
+        showResult={showResult}
       />
       <AnswerResult
         showResult={showResult}
