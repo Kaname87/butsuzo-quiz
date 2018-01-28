@@ -3,33 +3,47 @@ import { StyleSheet, Text, View,
   Image,
   TouchableOpacity,
  } from 'react-native';
-//import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
 
-export default class AnswerOption extends Component {
-    render() {
-      return (
-        <TouchableOpacity
-          disabled={this.props.showResult}
-          onPress={() => this.props.onSelectAnswer(this.props.id)}
-        >
-          <View style={{
-            width: this.props.width,
-            height: this.props.height,
-            // flex: 1,
-            borderRadius: 4,
-            borderWidth: 0.5,
-            borderColor: '#d6d7da',
-            alignItems: 'stretch',
-          }}>
-            <Image source={{uri: this.props.uri}}
-              style={{
-                flex: 1,
-                // width: this.props.width,
-                // height: this.props.height,
-                resizeMode: 'contain',
-              }} />
-          </View>
-        </TouchableOpacity>
-      );
-    }
+const AnswerOption = ({
+  showResult,
+  onSelectAnswer,
+  id,
+  width,
+  height,
+  uri,
+}) => {
+  const {
+    containerBase,
+    image,
+  } = styles;
+  const corainerStyle = StyleSheet.flatten([containerBase, {
+    width,
+    height,
+  }]);
+
+  return (
+    <TouchableOpacity
+      disabled={showResult}
+      onPress={() => onSelectAnswer(id)}
+    >
+      <View style={corainerStyle}>
+        <Image source={{uri}}
+          style={image} />
+      </View>
+    </TouchableOpacity>
+  );
 }
+export default AnswerOption;
+
+const styles = StyleSheet.create({
+  containerBase: {
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+    alignItems: 'stretch',
+  },
+  image: {
+    flex: 1,
+    resizeMode: 'contain',
+  }
+});
