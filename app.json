@@ -1,5 +1,9 @@
 {
   "expo": {
-    "sdkVersion": "25.0.0"
+    "name": "Butsuzo Quiz",
+    "description": "Four choice questions about Butsuzo (Buddha statues)", 
+    "slug": "butsuzo-quiz",
+    "sdkVersion": "25.0.0",
+    "privacy": "unlisted",
   }
 }
