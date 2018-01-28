@@ -1,33 +1,100 @@
 {
-  "quizSet":{
-    "id": "1", 
-    "name": "緊那羅像",
-    "place": "興福寺",
-    "anserOptions": [
-      {
-        "id": "1",
-        "name": "緊那羅像",
-        "place": "興福寺",
-        "uri": "http://www.kohfukuji.com/property/cultural/images/ph_016.jpg",
-      },
-      {
-        "id": "2",
-        "name": "迦楼羅像",
-        "place": "興福寺",
-        "uri": "http://www.kohfukuji.com/property/cultural/images/ph_013.jpg",
-      },
-      {
-        "id": "3",
-        "name": "沙羯羅像",
-        "place": "興福寺",
-        "uri": "http://www.kohfukuji.com/property/cultural/images/ph_033.jpg",
-      },
-      {
-        "id": "4",
-        "name": "阿修羅像",
-        "place": "興福寺",
-        "uri": "http://www.kohfukuji.com/property/cultural/images/ph_001.jpg",
-      },
-    ],
-  }
+  "quizSet":[
+    {
+      "id": "1", 
+      "name": "緊那羅(きんなら)像",
+      "place": "興福寺",
+      "answer": "1",
+      "anserOptions": [
+        {
+          "id": "1",
+          "name": "緊那羅像",
+          "place": "興福寺",
+          "uri": "http://www.kohfukuji.com/property/cultural/images/ph_016.jpg",
+        },
+        {
+          "id": "2",
+          "name": "迦楼羅像",
+          "place": "興福寺",
+          "uri": "http://www.kohfukuji.com/property/cultural/images/ph_013.jpg",
+        },
+        {
+          "id": "3",
+          "name": "沙羯羅像",
+          "place": "興福寺",
+          "uri": "http://www.kohfukuji.com/property/cultural/images/ph_033.jpg",
+        },
+        {
+          "id": "4",
+          "name": "阿修羅像",
+          "place": "興福寺",
+          "uri": "http://www.kohfukuji.com/property/cultural/images/ph_001.jpg",
+        },
+      ],
+    },
+    {
+      "id": "2", 
+      "name": "緊那羅(きんなら)像",
+      "place": "三十三間堂",
+      "answer": "5",
+      "anserOptions": [
+        {
+          "id": "6",
+          "name": "迦楼羅像",
+          "place": "三十三間堂",
+          "uri": "https://butsuzolink.com/wp-content/uploads/2017/09/pasted-image-0-12.png",
+        },
+        {
+          "id": "8",
+          "name": "阿修羅像",
+          "place": "三十三間堂",
+          "uri": "https://butsuzolink.com/wp-content/uploads/2017/09/pasted-image-0-24.png",
+        },
+        {
+          "id": "7",
+          "name": "沙羯羅像",
+          "place": "三十三間堂",
+          "uri": "https://butsuzolink.com/wp-content/uploads/2017/09/pasted-image-0-23.png",
+        },
+        {
+          "id": "5",
+          "name": "緊那羅像",
+          "place": "三十三間堂",
+          "uri": "https://butsuzolink.com/wp-content/uploads/2017/09/pasted-image-0-27.png",
+        },
+      ],
+    },
+    {
+      "id": "3", 
+      "name": "雷神",
+      "place": "光明寺",
+      "correct": "11",
+      "anserOptions": [
+        {
+          "id": "9",
+          "name": "雷神",
+          "place": "三十三間堂",
+          "uri": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sanjusangendo_Raijin.jpg/220px-Sanjusangendo_Raijin.jpg",
+        },
+        {
+          "id": "10",
+          "name": "雷神",
+          "place": "湯殿山総本寺瀧水寺大日坊",
+          "uri": "http://www.mokkedano.net/file/show/25952.jpg?width=551&height=387&resize=fit&1506106817",
+        },
+        {
+          "id": "11",
+          "name": "雷神",
+          "place": "光明寺",
+          "uri": "https://blog-001.west.edge.storage-yahoo.jp/res/blog-27-f5/mgh03015/folder/1039537/88/29180588/img_1?1327417611",
+        },
+        {
+          "id": "12",
+          "name": "雷神",
+          "place": "雷門",
+          "uri": "https://blog-001.west.edge.storage-yahoo.jp/res/blog-c2-4a/shigesanshiro/folder/660022/06/30696106/img_0?1335492968",
+        },
+      ],
+    }  
+  ]
 }
