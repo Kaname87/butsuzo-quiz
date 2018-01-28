@@ -25,6 +25,7 @@ export default Quiz;
 const styles = StyleSheet.create({
   quizContainer: {
     flex: 1,
+    marginBottom: 10,
   },
   quizNumber: {
     fontSize: 15,

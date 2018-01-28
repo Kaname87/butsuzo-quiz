@@ -84,7 +84,6 @@ export default class App extends Component {
     this.setState(prevState => {
       if (
         prevState.number === this.state.number
-        // && !prevState.showResult
         && prevState.number <= lastQuizNumber
       ) {
         const showResult = true;
@@ -117,7 +116,7 @@ export default class App extends Component {
     })
 
     if (this.state.number < lastQuizNumber) {
-      // 若干遅くよみとる
+      // 先に正誤の結果を見せるために、少しintervalを置いて次の問題を取得
       setTimeout(() => {
         this.setState(prevState =>({
           quizSet: this._getNewQuizSet(prevState.number - 1),
