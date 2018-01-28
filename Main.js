@@ -4,22 +4,22 @@ import {
   Text,
   View,
   Alert,
-  // TouchableOpacity,
+  //Button,
  } from 'react-native';
 import AnswerOptionsContainer from './AnswerOptionsContainer';
 import Quiz from './Quiz';
 import Header from './Header';
 import ProgressBar from './ProgressBar';
 import AnswerResult from './AnswerResult';
+import Button from './Button';
 
 // import data from './data.json'
 
 // const maxQuestion = 3;
 
 export default class Main extends Component {
-  
   render() {
-    return (
+    const main = this.props.isStarted ? 
       <View style={styles.container}>
         <ProgressBar />
         <Quiz
@@ -35,6 +35,25 @@ export default class Main extends Component {
           showResult={this.props.showResult}
           isCorrect={this.props.isCorrect}
         />
+        <Button
+          onPress={this.props.onPressQuit}
+          title="中止"
+          color="black"
+          accessibilityLabel="中止"
+        />
+      </View>
+    : <View style={styles.container}>
+        <Button
+          onPress={this.props.onPressStart}
+          title="挑戦"
+          color="black"
+          accessibilityLabel="挑戦"
+        />
+      </View>
+
+    return (
+      <View style={styles.container}>
+        {main}
       </View>
     );
   }
@@ -44,18 +63,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 6,
     backgroundColor: '#f7f7f7',
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    justifyContent: 'center',
   },
-  progressBar: {
-    flex: 1,
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  // container: {
-  //  flex: 1,
-  //  paddingTop: 22
-  // },
 });

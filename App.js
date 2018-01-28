@@ -27,9 +27,12 @@ export default class App extends Component {
       isCorrect: false,
       quizSet: this.getNewQuizSet(0),
       isFinished: false,
+      isStarted: false,
     }
 
     this._onPressButton = this._onPressButton.bind(this);
+    this._onPressStart = this._onPressStart.bind(this);
+    this._onPressQuit = this._onPressQuit.bind(this);
   }
 
   getNewQuizSet(idx) {
@@ -39,6 +42,32 @@ export default class App extends Component {
   _checkAnswer(id) {
     //Alert.alert(`correct ${this.state.quizSet.answer} Amd select ${id}`);
     return this.state.quizSet.answer === id;
+  }
+
+  _onPressStart() {
+    this.setState(prevState => {
+      if (!prevState.isStarted) {
+        return {
+          isStarted: true,
+          number: 1,
+          correctNumber: 0,
+          showResult: false,
+          isCorrect: false,
+          quizSet: this.getNewQuizSet(0),
+          isFinished: false,
+        };
+      }
+    });
+  }
+
+  _onPressQuit() {
+    this.setState(prevState => {
+      if (prevState.isStarted) {
+        return {
+          isStarted: false,
+        };
+      }
+    });
   }
 
   _onPressButton(id){
@@ -81,10 +110,13 @@ export default class App extends Component {
       <View style={styles.container}>
         <Header />
         <Main
+          isStarted={this.state.isStarted}
           name={this.state.quizSet.name}
           place={this.state.quizSet.place}
           number={this.state.number}
           isCorrect={this.state.isCorrect}
+          onPressStart={this._onPressStart}
+          onPressQuit={this._onPressQuit}
           answerOptions={this.state.quizSet.answerOptions}
           onPressButton={this._onPressButton}
           showResult={this.state.showResult}
