@@ -27,6 +27,7 @@ export default class Main extends Component {
             name={this.props.name}
             place={this.props.place}
             number={this.props.number}
+            maxQuestion={this.props.maxQuestion}
             answerOptions={this.props.answerOptions}
             onSelectAnswer={this.props.onSelectAnswer}
             showResult={this.props.showResult}
