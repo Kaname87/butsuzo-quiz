@@ -12,7 +12,7 @@ import Main from './Main';
 
 import data from './data.json'
 
-const maxQuestion = 3;
+const lastQuizNumber = 3;
 
 export default class App extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ export default class App extends Component {
       showResult: false,
       isCorrect: false,
       quizSet: this.getNewQuizSet(0),
-      isFinished: true,
+      isFinished: false,
       isStarted: false,
     }
 
@@ -76,7 +76,7 @@ export default class App extends Component {
         const newState = {
           number: prevState.number + 1,
           showResult: true,
-          isFinished: prevState.number === maxQuestion,
+          isFinished: prevState.number === lastQuizNumber,
         }
 
         if (isCorrect) {
@@ -115,7 +115,7 @@ export default class App extends Component {
           number={this.state.number}
           isCorrect={this.state.isCorrect}
           correctNumber={this.state.correctNumber}
-          maxQuestion={maxQuestion}
+          lastQuizNumber={lastQuizNumber}
           onPressStart={this._onPressStart}
           onPressQuit={this._onPressQuit}
           answerOptions={this.state.quizSet.answerOptions}

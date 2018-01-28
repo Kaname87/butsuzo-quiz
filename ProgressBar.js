@@ -8,7 +8,7 @@ export default class ProgressBar extends Component {
     super(props);
 
     this.state = {
-      progress: this._calcProgress(this.props.number, this.props.maxQuestion),
+      progress: this._calcProgress(this.props.number, this.props.lastQuizNumber),
     }
 
     this._calcProgress = this._calcProgress.bind(this);
@@ -20,7 +20,7 @@ export default class ProgressBar extends Component {
   
   componentWillReceiveProps(props) {
     this.setState({
-      progress: this._calcProgress(props.number, props.maxQuestion),
+      progress: this._calcProgress(props.number, props.lastQuizNumber),
     });
   }
 

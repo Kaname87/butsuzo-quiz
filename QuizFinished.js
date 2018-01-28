@@ -11,13 +11,13 @@ import Button from './Button';
 const QuizFinished = ({
   onPressStart,
   correctNumber,
-  maxQuestion,
+  lastQuizNumber,
 }) => {
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
         <Text style={styles.text}>
-          {maxQuestion}問中{correctNumber}問正解
+          {lastQuizNumber}問中{correctNumber}問正解
         </Text>
       </View>
       <Button

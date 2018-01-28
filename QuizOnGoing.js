@@ -20,12 +20,12 @@ const QuizOnGoing = ({
   showResult,
   isCorrect,
   onPressQuit,
-  maxQuestion,
+  lastQuizNumber,
 }) => {
   return (
     <View style={styles.container}>
       <ProgressBar 
-        maxQuestion={maxQuestion}
+        lastQuizNumber={lastQuizNumber}
         number={number}
       />
       <Quiz
