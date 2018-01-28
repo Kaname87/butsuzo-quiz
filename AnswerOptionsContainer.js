@@ -13,15 +13,49 @@ export default class AnswerOptionsContainer extends Component {
       Alert.alert('You tapped the button!')
     }
     
+    
     render() {
+  
+      const evenOptions = this.props.anserOptions
+        .filter((option, i) => (i % 2 === 0))
+        .map(option => {
+          return (
+            <AnswerOption 
+              key={option.id}
+              onPressButton={this._onPressButton}
+              width={optionHeight}
+              height={optionWidth}
+              backgroundColor={'yellow'}
+              option={option}
+            />
+          )
+      });
+      // console.log(evenOptions);
+      const oddOptions = this.props.anserOptions
+        .filter((option, i) => (i % 2 !== 0))
+        .map(option => {
+          return (
+            <AnswerOption 
+              key={option.id}
+              onPressButton={this._onPressButton}
+              width={optionHeight}
+              height={optionWidth}
+              backgroundColor={'yellow'}
+              option={option}
+            />
+          )
+      });
+      
       return (
         <View style={{
             flex: 5,
             flexDirection: 'column',
-            justifyContent: 'center',
+            // justifyContent: 'center',
             alignItems: 'center',
             // justifyContent: 'space-between',
           }}>
+          
+          
           <View style={{
               flex: 1,
               flexDirection: 'row',
@@ -29,18 +63,7 @@ export default class AnswerOptionsContainer extends Component {
               alignItems: 'flex-end',
               // justifyContent: 'space-between',
           }}>
-            <AnswerOption 
-              onPressButton={this._onPressButton}
-              width={optionHeight}
-              height={optionWidth}
-              backgroundColor={'yellow'}
-            />
-            <AnswerOption 
-              onPressButton={this._onPressButton}
-              width={optionHeight}
-              height={optionWidth}
-              backgroundColor={'skyblue'}
-            />
+            {evenOptions}
           </View>
           <View style={{
               flex: 1,
@@ -49,18 +72,7 @@ export default class AnswerOptionsContainer extends Component {
               alignItems: 'flex-start',
               // justifyContent: 'space-between',
             }}>
-            <AnswerOption 
-              onPressButton={this._onPressButton}
-              width={optionHeight}
-              height={optionWidth}
-              backgroundColor={'purple'}
-            />
-            <AnswerOption 
-              onPressButton={this._onPressButton}
-              width={optionHeight}
-              height={optionWidth}
-              backgroundColor={'red'}
-            />
+            {oddOptions}
           </View>
         </View>
       );

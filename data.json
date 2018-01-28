@@ -1,0 +1,33 @@
+{
+  "quizSet":{
+    "id": "1", 
+    "name": "緊那羅像",
+    "place": "興福寺",
+    "anserOptions": [
+      {
+        "id": "1",
+        "name": "緊那羅像",
+        "place": "興福寺",
+        "uri": "http://www.kohfukuji.com/property/cultural/images/ph_016.jpg",
+      },
+      {
+        "id": "2",
+        "name": "迦楼羅像",
+        "place": "興福寺",
+        "uri": "http://www.kohfukuji.com/property/cultural/images/ph_013.jpg",
+      },
+      {
+        "id": "3",
+        "name": "沙羯羅像",
+        "place": "興福寺",
+        "uri": "http://www.kohfukuji.com/property/cultural/images/ph_033.jpg",
+      },
+      {
+        "id": "1",
+        "name": "阿修羅像",
+        "place": "興福寺",
+        "uri": "http://www.kohfukuji.com/property/cultural/images/ph_001.jpg",
+      },
+    ],
+  }
+}

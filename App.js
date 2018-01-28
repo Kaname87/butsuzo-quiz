@@ -10,14 +10,28 @@ import AnswerOptionsContainer from './AnswerOptionsContainer';
 import Quiz from './Quiz';
 //import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
 
+import data from './data.json'
+
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      number: 0,
+    }
+  }
     
   render() {
-    
     return (
       <View style={styles.container}>
-        <Quiz />
-        <AnswerOptionsContainer />
+        <Quiz 
+          name={data.quizSet.name}
+          place={data.quizSet.place}
+          number={this.state.number}
+        />
+        <AnswerOptionsContainer 
+          anserOptions={data.quizSet.anserOptions}
+        />
       </View>
     );
   }

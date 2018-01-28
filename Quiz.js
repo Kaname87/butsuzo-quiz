@@ -8,14 +8,14 @@ import {
  } from 'react-native';
  
 const Quiz = ({
-   number=0,
-   name='阿弥陀仏',
-   place='阿弥陀仏',
+   number,
+   name,
+   place,
  }) => {
   return (
     <View style={styles.quizContainer}>
       <Text style={styles.quizNumber}>第{number}門</Text>
-      <Text style={styles.quizText}>{name}は？</Text>
+      <Text style={styles.quizText}>{place}の{name}は？</Text>
     </View> 
   )
  }
