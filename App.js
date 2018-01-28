@@ -6,10 +6,11 @@ import {
   Alert,
   // TouchableOpacity,
  } from 'react-native';
-import AnswerOptionsContainer from './AnswerOptionsContainer';
-import Quiz from './Quiz';
+// import AnswerOptionsContainer from './AnswerOptionsContainer';
+// import Quiz from './Quiz';
 import Header from './Header';
-import ProgressBar from './ProgressBar';
+import Main from './Main';
+//import ProgressBar from './ProgressBar';
 
 import data from './data.json'
 
@@ -20,7 +21,7 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      number: 0,
+      number: 1,
       correctNumber: 0,
       showResult: false,
       isCorrect: false,
@@ -36,7 +37,7 @@ export default class App extends Component {
   }
 
   _checkAnswer(id) {
-    
+    //Alert.alert(`correct ${this.state.quizSet.answer} Amd select ${id}`);
     return this.state.quizSet.answer === id;
   }
 
@@ -58,7 +59,10 @@ export default class App extends Component {
             isCorrect: true,
           }
         } else {
-          return newState;
+          return {
+            ...newState,
+            isCorrect: false,
+          }
         }
       }
     })
@@ -66,7 +70,7 @@ export default class App extends Component {
     // 若干遅くよみとる TODO: 問題がおわったらよまない
     setTimeout(() => {
       this.setState(prevState =>({
-        quizSet: this.getNewQuizSet(prevState.number),
+        quizSet: this.getNewQuizSet(prevState.number - 1),
         showResult: false,
       }))}, 1000
     )
@@ -76,20 +80,14 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Header />
-        <ProgressBar />
-        <Quiz
+        <Main
           name={this.state.quizSet.name}
           place={this.state.quizSet.place}
           number={this.state.number}
-        />
-        {this.state.showResult &&
-          <View style={styles.progressBar}>
-            <Text>{this.state.isCorrect ? "Correct" : "Wrong"} </Text>
-          </View>
-        }
-        <AnswerOptionsContainer
-          anserOptions={this.state.quizSet.anserOptions}
+          isCorrect={this.state.isCorrect}
+          answerOptions={this.state.quizSet.answerOptions}
           onPressButton={this._onPressButton}
+          showResult={this.state.showResult}
         />
       </View>
     );

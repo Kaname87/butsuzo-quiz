@@ -5,7 +5,7 @@
       "name": "緊那羅(きんなら)像",
       "place": "興福寺",
       "answer": "1",
-      "anserOptions": [
+      "answerOptions": [
         {
           "id": "1",
           "name": "緊那羅像",
@@ -37,7 +37,7 @@
       "name": "緊那羅(きんなら)像",
       "place": "三十三間堂",
       "answer": "5",
-      "anserOptions": [
+      "answerOptions": [
         {
           "id": "6",
           "name": "迦楼羅像",
@@ -69,7 +69,7 @@
       "name": "雷神",
       "place": "光明寺",
       "correct": "11",
-      "anserOptions": [
+      "answerOptions": [
         {
           "id": "9",
           "name": "雷神",

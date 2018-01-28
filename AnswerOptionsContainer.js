@@ -22,7 +22,7 @@ export default class AnswerOptionsContainer extends Component {
     }
     
     render() {
-        const options = this.props.anserOptions
+        const options = this.props.answerOptions
         .map(option => {
           return this._makeAnswerOption(option)
       });
