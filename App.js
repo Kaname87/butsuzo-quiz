@@ -4,13 +4,11 @@ import {
   Text,
   View,
   Alert,
-  // TouchableOpacity,
  } from 'react-native';
-// import AnswerOptionsContainer from './AnswerOptionsContainer';
-// import Quiz from './Quiz';
+
 import Header from './Header';
 import Main from './Main';
-//import ProgressBar from './ProgressBar';
+
 
 import data from './data.json'
 
@@ -26,7 +24,7 @@ export default class App extends Component {
       showResult: false,
       isCorrect: false,
       quizSet: this.getNewQuizSet(0),
-      isFinished: false,
+      isFinished: true,
       isStarted: false,
     }
 
@@ -46,7 +44,7 @@ export default class App extends Component {
 
   _onPressStart() {
     this.setState(prevState => {
-      if (!prevState.isStarted) {
+      if (!prevState.isStarted || prevState.isFinished) {
         return {
           isStarted: true,
           number: 1,
@@ -74,7 +72,7 @@ export default class App extends Component {
     const isCorrect = this._checkAnswer(id);
 
     this.setState(prevState => {
-      if (prevState.number === this.state.number) {
+      if (prevState.number === this.state.number && !prevState.showResult) {
         const newState = {
           number: prevState.number + 1,
           showResult: true,
@@ -111,10 +109,13 @@ export default class App extends Component {
         <Header />
         <Main
           isStarted={this.state.isStarted}
+          isFinished={this.state.isFinished}
           name={this.state.quizSet.name}
           place={this.state.quizSet.place}
           number={this.state.number}
           isCorrect={this.state.isCorrect}
+          correctNumber={this.state.correctNumber}
+          maxQuestion={maxQuestion}
           onPressStart={this._onPressStart}
           onPressQuit={this._onPressQuit}
           answerOptions={this.state.quizSet.answerOptions}
@@ -130,18 +131,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f7f7f7',
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
-  progressBar: {
-    flex: 1,
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  // container: {
-  //  flex: 1,
-  //  paddingTop: 22
-  // },
 });

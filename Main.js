@@ -4,52 +4,43 @@ import {
   Text,
   View,
   Alert,
-  //Button,
  } from 'react-native';
-import AnswerOptionsContainer from './AnswerOptionsContainer';
-import Quiz from './Quiz';
-import Header from './Header';
-import ProgressBar from './ProgressBar';
-import AnswerResult from './AnswerResult';
-import Button from './Button';
 
-// import data from './data.json'
-
-// const maxQuestion = 3;
+import QuizStart from './QuizStart';
+import QuizOnGoing from './QuizOnGoing';
+import QuizFinished from './QuizFinished';
 
 export default class Main extends Component {
   render() {
-    const main = this.props.isStarted ? 
-      <View style={styles.container}>
-        <ProgressBar />
-        <Quiz
-          name={this.props.name}
-          place={this.props.place}
-          number={this.props.number}
+    let main = null;
+    if (this.props.isFinished) {
+      main = (
+        <QuizFinished
+          onPressStart={this.props.onPressStart}
+          maxQuestion={this.props.maxQuestion}
+          correctNumber={this.props.correctNumber}
         />
-        <AnswerOptionsContainer
-          answerOptions={this.props.answerOptions}
-          onPressButton={this.props.onPressButton}
+      );
+    } else if (this.props.isStarted) {
+        main = (
+          <QuizOnGoing
+            name={this.props.name}
+            place={this.props.place}
+            number={this.props.number}
+            answerOptions={this.props.answerOptions}
+            onPressButton={this.props.onPressButton}
+            showResult={this.props.showResult}
+            isCorrect={this.props.isCorrect}
+            onPressQuit={this.props.onPressQuit}
+          />
+        );
+    } else {
+      main = (
+        <QuizStart 
+          onPressStart={this.props.onPressStart}
         />
-        <AnswerResult
-          showResult={this.props.showResult}
-          isCorrect={this.props.isCorrect}
-        />
-        <Button
-          onPress={this.props.onPressQuit}
-          title="中止"
-          color="black"
-          accessibilityLabel="中止"
-        />
-      </View>
-    : <View style={styles.container}>
-        <Button
-          onPress={this.props.onPressStart}
-          title="挑戦"
-          color="black"
-          accessibilityLabel="挑戦"
-        />
-      </View>
+      );
+    }
 
     return (
       <View style={styles.container}>
