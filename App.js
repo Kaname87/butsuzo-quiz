@@ -8,8 +8,8 @@ import {
  } from 'react-native';
 import AnswerOptionsContainer from './AnswerOptionsContainer';
 import Quiz from './Quiz';
-
 import Header from './Header';
+import ProgressBar from './ProgressBar';
 
 import data from './data.json'
 
@@ -63,7 +63,7 @@ export default class App extends Component {
       }
     })
 
-    // 若干遅くよみとる
+    // 若干遅くよみとる TODO: 問題がおわったらよまない
     setTimeout(() => {
       this.setState(prevState =>({
         quizSet: this.getNewQuizSet(prevState.number),
@@ -76,11 +76,8 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Header />
-        <View style={styles.progressBar}>
-          <Text>Prpgress Bar</Text>
-          <Text>{this.state.number}/{maxQuestion}</Text>
-        </View>
-        <Quiz 
+        <ProgressBar />
+        <Quiz
           name={this.state.quizSet.name}
           place={this.state.quizSet.place}
           number={this.state.number}
@@ -90,7 +87,7 @@ export default class App extends Component {
             <Text>{this.state.isCorrect ? "Correct" : "Wrong"} </Text>
           </View>
         }
-        <AnswerOptionsContainer 
+        <AnswerOptionsContainer
           anserOptions={this.state.quizSet.anserOptions}
           onPressButton={this._onPressButton}
         />
