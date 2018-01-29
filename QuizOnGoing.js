@@ -36,11 +36,6 @@ const QuizOnGoing = ({
 
   return (
     <QuizView>
-      <ProgressBar 
-        lastQuestionNumber={lastQuestionNumber}
-        currentQuestionNumber={currentQuestionNumber}
-        isFinished={isFinished}
-      />
       <Question
         name={name}
         place={place}
@@ -54,6 +49,11 @@ const QuizOnGoing = ({
       <AnswerResult
         showResult={showResult}
         isCorrect={isCorrect}
+      />
+      <ProgressBar 
+        lastQuestionNumber={lastQuestionNumber}
+        currentQuestionNumber={currentQuestionNumber}
+        isFinished={isFinished}
       />
       {button}
     </QuizView>
