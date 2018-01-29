@@ -28,5 +28,5 @@ yarn install
 ```
 を実行する必要あり。
 
-`yarn start` 後, terminal上に表示されるQRコードをExpoのAppで読み取るか、
-同じネットワークにデバイスがあるならterminal上に表示されurlでアクセス可能
+`yarn start` 後, terminal上に表示されるQRコードをExpoのAppで読み取る.
+または`yarn ios run` か `yarn android run` を行い、Expo XDEなどからエミュレータにてアクセス。
