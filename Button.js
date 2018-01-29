@@ -13,7 +13,7 @@ const Button = ({
     <TouchableOpacity
       style={styles.loginScreenButton}
       onPress={onPress}
-      underlayColor='#fff'
+      underlayColor="#fff"
     >
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>

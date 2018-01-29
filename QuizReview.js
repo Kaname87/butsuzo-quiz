@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
   View,
  } from 'react-native';
-
 import Button from './Button';
-
+import QuizView from './QuizView';
 
 const QuizFinished = ({
   onPressStart,
@@ -14,7 +13,7 @@ const QuizFinished = ({
   lastQuizNumber,
 }) => {
   return (
-    <View style={styles.container}>
+    <QuizView>
       <View style={styles.textContainer}>
         <Text style={styles.text}>
           {lastQuizNumber}問中{correctNumber}問正解
@@ -24,16 +23,11 @@ const QuizFinished = ({
         onPress={onPressStart}
         title="再挑戦"
       />
-    </View>
+    </QuizView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 6,
-    backgroundColor: '#f7f7f7',
-    justifyContent: 'center',
-  },
   textContainer: {
     alignItems: 'center',
     marginBottom: 20,

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  StyleSheet,
   Text,
   View,
  } from 'react-native';
@@ -10,6 +9,7 @@ import {
  import ProgressBar from './ProgressBar';
  import AnswerResult from './AnswerResult';
  import Button from './Button';
+ import QuizView from './QuizView';
 
 const QuizOnGoing = ({
   name,
@@ -35,7 +35,7 @@ const QuizOnGoing = ({
   />
 
   return (
-    <View style={styles.container}>
+    <QuizView>
       <ProgressBar 
         lastQuizNumber={lastQuizNumber}
         number={number}
@@ -56,15 +56,8 @@ const QuizOnGoing = ({
         isCorrect={isCorrect}
       />
       {button}
-    </View>
+    </QuizView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 6,
-    backgroundColor: '#f7f7f7',
-    justifyContent: 'center',
-  },
-});
 export default QuizOnGoing;
