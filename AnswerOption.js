@@ -16,7 +16,8 @@ const AnswerOption = ({
     containerBase,
     image,
   } = styles;
-  const corainerStyle = StyleSheet.flatten([containerBase, {
+
+  const containerStyle = StyleSheet.flatten([containerBase, {
     width,
     height,
   }]);
@@ -26,7 +27,7 @@ const AnswerOption = ({
       disabled={showResult}
       onPress={() => onSelectAnswer(id)}
     >
-      <View style={corainerStyle}>
+      <View style={containerStyle}>
         <Image source={{uri}}
           style={image} />
       </View>
