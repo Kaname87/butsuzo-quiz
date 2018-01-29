@@ -32,6 +32,7 @@ const QuizOnGoing = ({
   : <Button
       onPress={onPressQuit}
       title="中止"
+      textColor="darkgrey"
   />
 
   return (
