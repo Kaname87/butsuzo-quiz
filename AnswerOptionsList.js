@@ -5,11 +5,10 @@ import { StyleSheet, Text, View,
  } from 'react-native';
  import AnswerOption from './AnswerOption';
  
-//import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
 const optionHeight = 170;
 const optionWidth = 170;
 
-export default class AnswerOptionsContainer extends Component {
+export default class AnswerOptionsList extends Component {
     _makeAnswerOption(option) {
       return <AnswerOption 
         key={option.id}

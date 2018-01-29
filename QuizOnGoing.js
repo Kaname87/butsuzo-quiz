@@ -4,7 +4,7 @@ import {
   Text,
   View,
  } from 'react-native';
- import AnswerOptionsContainer from './AnswerOptionsContainer';
+ import AnswerOptionsList from './AnswerOptionsList';
  import Quiz from './Quiz';
  import Header from './Header';
  import ProgressBar from './ProgressBar';
@@ -46,7 +46,7 @@ const QuizOnGoing = ({
         place={place}
         number={number}
       />
-      <AnswerOptionsContainer
+      <AnswerOptionsList
         answerOptions={answerOptions}
         onSelectAnswer={onSelectAnswer}
         showResult={showResult}
