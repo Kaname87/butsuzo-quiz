@@ -16,7 +16,10 @@ const QuizFinished = ({
     <QuizView>
       <View style={styles.textContainer}>
         <Text style={styles.text}>
-          {lastQuestionNumber}問中{correctNumber}問正解
+          <Text style={styles.textBold}>{lastQuestionNumber}</Text>
+          <Text>問中</Text>
+          <Text style={styles.textBold}>{correctNumber}</Text>
+          <Text>問正解</Text>
         </Text>
       </View>
       <Button
@@ -34,6 +37,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
+  },
+  textBold: {
+    fontSize: 20,
+    fontWeight: 'bold',
   }
 });
 export default QuizFinished;
