@@ -27,23 +27,20 @@ export default AnswerResult;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop:20,
+    flex: 0.4,
+    marginBottom: 25,
     flexDirection:'row',
     justifyContent: 'center',
-    height: 10,
-    borderBottomWidth:1,
     alignItems:'center',
-    borderColor:'rgba(0,0,0,0.1)'
   },
   correct: {
     color: 'limegreen', 
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
   },
   wrong: {
     color: 'red', 
-    fontSize: 25,
+    fontSize: 35,
     fontWeight: 'bold',
   },
 });

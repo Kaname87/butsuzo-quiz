@@ -13,11 +13,11 @@ export default class ProgressBar extends Component {
 
     this._calcProgress = this._calcProgress.bind(this);
   }
-  
+
   _calcProgress(isFinished, currentQuestionNumber, lastQuestionNumber) {
     return isFinished ? 100 : ((currentQuestionNumber -1) / lastQuestionNumber) * 100;
   }
-  
+
   componentWillReceiveProps(props) {
     this.setState({
       progress: this._calcProgress(props.isFinished, props.currentQuestionNumber, props.lastQuestionNumber),
@@ -36,11 +36,11 @@ export default class ProgressBar extends Component {
 }
 
 const styles = {
-  container: {     
+  container: {
      flex: 0.3,
      flexDirection: 'row',
      borderWidth: 1,
-     borderRadius: 10,
+     borderRadius: 5,
   },
   progressBar: {
      overflow: 'hidden',
@@ -48,10 +48,10 @@ const styles = {
   },
   progressBarLeft: {
     backgroundColor: 'orange',
-    borderRadius: 10,
+    borderRadius: 5,
   },
   progressBarRight: {
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 5,
   }
 }

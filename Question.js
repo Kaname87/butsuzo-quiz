@@ -23,7 +23,6 @@ export default Question;
 const styles = StyleSheet.create({
   questionContainer: {
     flex: 1,
-    marginBottom: 10,
   },
   questionNumber: {
     fontSize: 15,

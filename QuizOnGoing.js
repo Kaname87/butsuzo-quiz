@@ -41,14 +41,14 @@ const QuizOnGoing = ({
         place={place}
         currentQuestionNumber={currentQuestionNumber}
       />
+      <AnswerResult
+        showResult={showResult}
+        isCorrect={isCorrect}
+      />
       <AnswerOptionsList
         answerOptions={answerOptions}
         onSelectAnswer={onSelectAnswer}
         showResult={showResult}
-      />
-      <AnswerResult
-        showResult={showResult}
-        isCorrect={isCorrect}
       />
       <ProgressBar 
         lastQuestionNumber={lastQuestionNumber}

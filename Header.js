@@ -24,12 +24,11 @@ const styles = StyleSheet.create({
     height: 10,
     borderBottomWidth:1,
     alignItems:'center',
-    borderColor:'rgba(0,0,0,0.1)'
+    borderColor:'rgba(0,0,0,0.1)',
   },
   header: {
-    alignSelf:'center', 
-    marginLeft:10, 
-    color:'#444', 
-    fontSize:25,
+    alignSelf: 'center',
+    color: '#444', 
+    fontSize: 30,
   }
 });
