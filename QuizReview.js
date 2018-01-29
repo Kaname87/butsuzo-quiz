@@ -10,13 +10,13 @@ import QuizView from './QuizView';
 const QuizFinished = ({
   onPressStart,
   correctNumber,
-  lastQuizNumber,
+  lastQuestionNumber,
 }) => {
   return (
     <QuizView>
       <View style={styles.textContainer}>
         <Text style={styles.text}>
-          {lastQuizNumber}問中{correctNumber}問正解
+          {lastQuestionNumber}問中{correctNumber}問正解
         </Text>
       </View>
       <Button

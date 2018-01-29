@@ -9,14 +9,16 @@ import Header from './Header';
 import Main from './Main';
 import data from './data.json'
 
-const lastQuizNumber = 3;
+const lastQuestionNumber = 3;
+
+// Quiz = 1 Question + 4 Answer Option
 
 export default class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      number: 1,
+      currentQuestionNumber: 1,
       correctNumber: 0,
       showResult: false,
       isCorrect: false,
@@ -46,7 +48,7 @@ export default class App extends Component {
       if (!prevState.isStarted || prevState.isFinished) {
         return {
           isStarted: true,
-          number: 1,
+          currentQuestionNumber: 1,
           correctNumber: 0,
           showResult: false,
           isCorrect: false,
@@ -83,12 +85,12 @@ export default class App extends Component {
 
     this.setState(prevState => {
       if (
-        prevState.number === this.state.number
-        && prevState.number <= lastQuizNumber
+        prevState.currentQuestionNumber === this.state.currentQuestionNumber
+        && prevState.currentQuestionNumber <= lastQuestionNumber
       ) {
         const showResult = true;
         let newState = null;
-        if (prevState.number === lastQuizNumber) {
+        if (prevState.currentQuestionNumber === lastQuestionNumber) {
           newState = {
             showResult,
             isFinished: true,
@@ -96,7 +98,7 @@ export default class App extends Component {
         } else {
           newState = {
             showResult,
-            number: prevState.number + 1,
+            currentQuestionNumber: prevState.currentQuestionNumber + 1,
           }
         }
 
@@ -115,11 +117,11 @@ export default class App extends Component {
       }
     })
 
-    if (this.state.number < lastQuizNumber) {
+    if (this.state.currentQuestionNumber < lastQuestionNumber) {
       // 先に正誤の結果を見せるために、少しintervalを置いて次の問題を取得
       setTimeout(() => {
         this.setState(prevState =>({
-          quizSet: this._getNewQuizSet(prevState.number - 1),
+          quizSet: this._getNewQuizSet(prevState.currentQuestionNumber - 1),
           showResult: false,
         }))}, 1000
       )
@@ -135,10 +137,10 @@ export default class App extends Component {
           isFinished={this.state.isFinished}
           name={this.state.quizSet.name}
           place={this.state.quizSet.place}
-          number={this.state.number}
+          currentQuestionNumber={this.state.currentQuestionNumber}
           isCorrect={this.state.isCorrect}
           correctNumber={this.state.correctNumber}
-          lastQuizNumber={lastQuizNumber}
+          lastQuestionNumber={lastQuestionNumber}
           onPressStart={this._onPressStart}
           onPressQuit={this._onPressQuit}
           onPressShowReview={this._onPressShowReview}

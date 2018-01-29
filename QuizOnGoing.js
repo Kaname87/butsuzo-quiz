@@ -4,7 +4,7 @@ import {
   View,
  } from 'react-native';
  import AnswerOptionsList from './AnswerOptionsList';
- import Quiz from './Quiz';
+ import Question from './Question';
  import Header from './Header';
  import ProgressBar from './ProgressBar';
  import AnswerResult from './AnswerResult';
@@ -14,14 +14,14 @@ import {
 const QuizOnGoing = ({
   name,
   place,
-  number,
+  currentQuestionNumber,
   answerOptions,
   onSelectAnswer,
   showResult,
   isCorrect,
   onPressQuit,
   onPressShowReview,
-  lastQuizNumber,
+  lastQuestionNumber,
   isFinished,
 }) => {
   const button = isFinished ?
@@ -37,14 +37,14 @@ const QuizOnGoing = ({
   return (
     <QuizView>
       <ProgressBar 
-        lastQuizNumber={lastQuizNumber}
-        number={number}
+        lastQuestionNumber={lastQuestionNumber}
+        currentQuestionNumber={currentQuestionNumber}
         isFinished={isFinished}
       />
-      <Quiz
+      <Question
         name={name}
         place={place}
-        number={number}
+        currentQuestionNumber={currentQuestionNumber}
       />
       <AnswerOptionsList
         answerOptions={answerOptions}

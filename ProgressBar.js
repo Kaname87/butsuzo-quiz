@@ -8,19 +8,19 @@ export default class ProgressBar extends Component {
     super(props);
 
     this.state = {
-      progress: this._calcProgress(this.props.isFinished,  this.props.number, this.props.lastQuizNumber),
+      progress: this._calcProgress(this.props.isFinished,  this.props.currentQuestionNumber, this.props.lastQuestionNumber),
     }
 
     this._calcProgress = this._calcProgress.bind(this);
   }
   
-  _calcProgress(isFinished, currentQuizNumber, maxQuizNumber) {
-    return isFinished ? 100 : ((currentQuizNumber -1) / maxQuizNumber) * 100;
+  _calcProgress(isFinished, currentQuestionNumber, lastQuestionNumber) {
+    return isFinished ? 100 : ((currentQuestionNumber -1) / lastQuestionNumber) * 100;
   }
   
   componentWillReceiveProps(props) {
     this.setState({
-      progress: this._calcProgress(props.isFinished, props.number, props.lastQuizNumber),
+      progress: this._calcProgress(props.isFinished, props.currentQuestionNumber, props.lastQuestionNumber),
     });
   }
 

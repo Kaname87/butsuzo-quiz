@@ -17,7 +17,7 @@ export default class Main extends Component {
       main = (
         <QuizReview
           onPressStart={this.props.onPressStart}
-          lastQuizNumber={this.props.lastQuizNumber}
+          lastQuestionNumber={this.props.lastQuestionNumber}
           correctNumber={this.props.correctNumber}
         />
       );
@@ -27,8 +27,8 @@ export default class Main extends Component {
             isFinished={this.props.isFinished}
             name={this.props.name}
             place={this.props.place}
-            number={this.props.number}
-            lastQuizNumber={this.props.lastQuizNumber}
+            currentQuestionNumber={this.props.currentQuestionNumber}
+            lastQuestionNumber={this.props.lastQuestionNumber}
             answerOptions={this.props.answerOptions}
             onSelectAnswer={this.props.onSelectAnswer}
             showResult={this.props.showResult}
