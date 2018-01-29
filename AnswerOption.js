@@ -12,12 +12,7 @@ const AnswerOption = ({
   height,
   uri,
 }) => {
-  const {
-    containerBase,
-    image,
-  } = styles;
-
-  const containerStyle = StyleSheet.flatten([containerBase, {
+  const containerStyle = StyleSheet.flatten([styles.containerBase, {
     width,
     height,
   }]);
@@ -29,7 +24,7 @@ const AnswerOption = ({
     >
       <View style={containerStyle}>
         <Image source={{uri}}
-          style={image} />
+          style={styles.image} />
       </View>
     </TouchableOpacity>
   );
