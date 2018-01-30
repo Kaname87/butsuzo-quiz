@@ -41,13 +41,13 @@ const styles = {
      flexDirection: 'row',
      borderWidth: 1,
      borderRadius: 5,
+     marginBottom: 5,
   },
   progressBar: {
      overflow: 'hidden',
      height: 6,
   },
   progressBarLeft: {
-    // backgroundColor: 'lightslategrey',
     backgroundColor: 'lightgrey',
     borderRadius: 5,
   },

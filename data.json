@@ -1,9 +1,11 @@
 {
   "quizSet":[
     {
-      "id": "1", 
-      "name": "緊那羅(きんなら)像",
+      "id": "1",
+      "name": "緊那羅像",
+      "name_kana": "きんならぞう",
       "place": "興福寺",
+      "place_kana": "こうふくじ",
       "answer": "1",
       "answerOptions": [
         {
@@ -33,9 +35,11 @@
       ],
     },
     {
-      "id": "2", 
-      "name": "緊那羅(きんなら)像",
+      "id": "2",
+      "name": "緊那羅像",
+      "name_kana": "きんならぞう",
       "place": "三十三間堂",
+      "place_kana": "さんじゅうさんげんどう",
       "answer": "5",
       "answerOptions": [
         {
@@ -65,9 +69,11 @@
       ],
     },
     {
-      "id": "3", 
+      "id": "3",
       "name": "雷神",
+      "name_kana": "らいじん",
       "place": "光明寺",
+      "place_kana": "こうみょうじ",
       "correct": "11",
       "answerOptions": [
         {
@@ -95,6 +101,6 @@
           "uri": "https://blog-001.west.edge.storage-yahoo.jp/res/blog-c2-4a/shigesanshiro/folder/660022/06/30696106/img_0?1335492968",
         },
       ],
-    }  
+    }
   ]
 }

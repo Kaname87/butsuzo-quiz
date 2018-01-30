@@ -4,15 +4,15 @@ import {
   Text,
   View,
  } from 'react-native';
- 
+
 const AnswerResult = ({
   showResult,
   isCorrect,
 }) => {
-  let resultText = <Text></Text>; // blank 
+  let resultText = <Text></Text>; // blank
   if (showResult) {
-    resultText = isCorrect ? 
-      <Text style={styles.correct}>○</Text> 
+    resultText = isCorrect ?
+      <Text style={styles.correct}>○</Text>
     : <Text style={styles.wrong}>×</Text>;
   }
 
@@ -34,13 +34,13 @@ const styles = StyleSheet.create({
     alignItems:'center',
   },
   correct: {
-    color: 'limegreen', 
-    fontSize: 30,
+    color: 'limegreen',
+    fontSize: 40,
     fontWeight: 'bold',
   },
   wrong: {
-    color: 'red', 
-    fontSize: 35,
+    color: 'red',
+    fontSize: 45,
     fontWeight: 'bold',
   },
 });
