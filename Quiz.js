@@ -8,7 +8,7 @@ import QuizStart from './QuizStart';
 import QuizOnGoing from './QuizOnGoing';
 import QuizReview from './QuizReview';
 
-export default class Main extends Component {
+export default class Quiz extends Component {
   render() {
     let main = null;
     if (this.props.showReview) {

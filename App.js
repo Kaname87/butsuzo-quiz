@@ -6,7 +6,7 @@ import {
   Alert,
  } from 'react-native';
 import Header from './Header';
-import Main from './Main';
+import Quiz from './Quiz';
 import data from './data.json'
 
 const lastQuestionNumber = 3;
@@ -132,7 +132,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Header />
-        <Main
+        <Quiz
           isStarted={this.state.isStarted}
           isFinished={this.state.isFinished}
           name={this.state.quizSet.name}
