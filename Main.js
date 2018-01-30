@@ -3,9 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Alert,
- } from 'react-native';
-
+} from 'react-native';
 import QuizStart from './QuizStart';
 import QuizOnGoing from './QuizOnGoing';
 import QuizReview from './QuizReview';
@@ -39,7 +37,7 @@ export default class Main extends Component {
         );
     } else {
       main = (
-        <QuizStart 
+        <QuizStart
           onPressStart={this.props.onPressStart}
         />
       );
@@ -51,7 +49,7 @@ export default class Main extends Component {
       </View>
     );
   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {

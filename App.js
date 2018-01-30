@@ -11,7 +11,7 @@ import data from './data.json'
 
 const lastQuestionNumber = 3;
 
-// Quiz = 1 Question + 4 Answer Option
+// 1 Quiz is 1 Question plus 4 Answer Options
 
 export default class App extends Component {
   constructor(props) {

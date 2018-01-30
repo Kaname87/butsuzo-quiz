@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  StyleSheet,
   View,
 } from 'react-native';
 
@@ -30,12 +31,12 @@ export default class ProgressBar extends Component {
         <View style={styles.progressBar} />
          <View style={[styles.progressBarLeft, {flex:this.state.progress}]} />
         <View style={[styles.progressBarRight, {flex:100 - this.state.progress}]} />
-       </View>
+      </View>
    );
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
      flex: 0.3,
      flexDirection: 'row',
@@ -55,4 +56,4 @@ const styles = {
     backgroundColor: 'white',
     borderRadius: 5,
   }
-}
+});

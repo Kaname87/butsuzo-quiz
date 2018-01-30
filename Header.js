@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
   View,
- } from 'react-native';
- 
-const Header = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.header}>仏像四択</Text>
-    </View> 
-  )
- }
+} from 'react-native';
+
+const Header = () => (
+  <View style={styles.container}>
+    <Text style={styles.header}>仏像四択</Text>
+  </View>
+);
 
 export default Header;
 
@@ -28,7 +26,7 @@ const styles = StyleSheet.create({
   },
   header: {
     alignSelf: 'center',
-    color: '#444', 
+    color: '#444',
     fontSize: 30,
   }
 });

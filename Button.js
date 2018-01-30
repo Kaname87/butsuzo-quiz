@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,10 +11,10 @@ const Button = ({
   labelColor='white',
   buttonColor='grey',
 }) => {
-
   const buttonStyle = StyleSheet.flatten([styles.button, {
     backgroundColor: buttonColor,
   }]);
+
   const textStyle = StyleSheet.flatten([styles.text, {
     color: labelColor,
   }]);
@@ -28,7 +28,7 @@ const Button = ({
       <Text style={textStyle}>{title}</Text>
     </TouchableOpacity>
   )
- }
+};
 
 export default Button;
 
@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
   button: {
     paddingTop: 15,
     paddingBottom: 15,
-    // backgroundColor: 'grey',
     borderRadius: 50,
     borderWidth: 1,
     borderColor: 'white',

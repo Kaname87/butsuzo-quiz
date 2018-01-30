@@ -1,15 +1,11 @@
 import React from 'react';
-import {
-  Text,
-  View,
- } from 'react-native';
- import AnswerOptionsList from './AnswerOptionsList';
- import Question from './Question';
- import Header from './Header';
- import ProgressBar from './ProgressBar';
- import AnswerResult from './AnswerResult';
- import Button from './Button';
- import QuizView from './QuizView';
+import AnswerOptionsList from './AnswerOptionsList';
+import Question from './Question';
+import Header from './Header';
+import ProgressBar from './ProgressBar';
+import AnswerResult from './AnswerResult';
+import Button from './Button';
+import QuizView from './QuizView';
 
 const QuizOnGoing = ({
   name,
@@ -59,6 +55,6 @@ const QuizOnGoing = ({
       {button}
     </QuizView>
   );
-}
+};
 
 export default QuizOnGoing;

@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View,
+import React from 'react';
+import {
+  StyleSheet,
+  View,
   Image,
   TouchableOpacity,
- } from 'react-native';
+} from 'react-native';
 
 const AnswerOption = ({
   showResult,

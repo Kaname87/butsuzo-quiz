@@ -3,24 +3,22 @@ import {
   StyleSheet,
   Text,
   View,
- } from 'react-native';
+} from 'react-native';
 
 const Question = ({
    currentQuestionNumber,
    name,
    place,
- }) => {
-  return (
-    <View style={styles.questionContainer}>
-      <Text style={styles.questionNumber}>第{currentQuestionNumber}門</Text>
-      <Text>
-        <Text style={styles.questionTextMain}>{place}</Text>
-        <Text style={styles.questionTextSub}>の</Text>
-        <Text style={styles.questionTextMain}>{name}</Text>
-      </Text>
-    </View>
-  )
- }
+}) => (
+  <View style={styles.questionContainer}>
+    <Text style={styles.questionNumber}>第{currentQuestionNumber}門</Text>
+    <Text>
+      <Text style={styles.questionTextMain}>{place}</Text>
+      <Text style={styles.questionTextSub}>の</Text>
+      <Text style={styles.questionTextMain}>{name}</Text>
+    </Text>
+  </View>
+);
 
 export default Question;
 
