@@ -25,6 +25,7 @@ const QuizFinished = ({
       <Button
         onPress={onPressStart}
         title="再挑戦"
+        buttonColor="orange"
       />
     </QuizView>
   );

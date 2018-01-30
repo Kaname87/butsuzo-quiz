@@ -25,7 +25,7 @@ export default class ProgressBar extends Component {
   }
 
   render() {
-    return ( 
+    return (
       <View style={styles.container} >
         <View style={styles.progressBar} />
          <View style={[styles.progressBarLeft, {flex:this.state.progress}]} />
@@ -47,7 +47,8 @@ const styles = {
      height: 6,
   },
   progressBarLeft: {
-    backgroundColor: 'orange',
+    // backgroundColor: 'lightslategrey',
+    backgroundColor: 'lightgrey',
     borderRadius: 5,
   },
   progressBarRight: {

@@ -28,6 +28,7 @@ const QuizOnGoing = ({
     <Button
       onPress={onPressShowReview}
       title="結果確認"
+      buttonColor="orange"
     />
   : <Button
       onPress={onPressQuit}
@@ -50,7 +51,7 @@ const QuizOnGoing = ({
         onSelectAnswer={onSelectAnswer}
         showResult={showResult}
       />
-      <ProgressBar 
+      <ProgressBar
         lastQuestionNumber={lastQuestionNumber}
         currentQuestionNumber={currentQuestionNumber}
         isFinished={isFinished}

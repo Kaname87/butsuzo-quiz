@@ -8,16 +8,20 @@ import {
 const Button = ({
   title,
   onPress,
-  textColor='white',
+  labelColor='white',
+  buttonColor='grey',
 }) => {
 
+  const buttonStyle = StyleSheet.flatten([styles.button, {
+    backgroundColor: buttonColor,
+  }]);
   const textStyle = StyleSheet.flatten([styles.text, {
-    color: textColor,
+    color: labelColor,
   }]);
 
   return (
     <TouchableOpacity
-      style={styles.button}
+      style={buttonStyle}
       onPress={onPress}
       underlayColor="#fff"
     >
@@ -32,7 +36,7 @@ const styles = StyleSheet.create({
   button: {
     paddingTop: 15,
     paddingBottom: 15,
-    backgroundColor: 'grey',
+    // backgroundColor: 'grey',
     borderRadius: 50,
     borderWidth: 1,
     borderColor: 'white',
