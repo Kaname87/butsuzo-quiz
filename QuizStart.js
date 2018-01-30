@@ -14,7 +14,7 @@ const QuizStart = ({
     <Button
       onPress={onPressStart}
       title="挑戦"
-      buttonColor="orange"
+      buttonColor="royalblue"
     />
   </QuizView>
 );

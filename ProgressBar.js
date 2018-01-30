@@ -22,13 +22,14 @@ const styles = StyleSheet.create({
      borderWidth: 1,
      borderRadius: 5,
      marginBottom: 5,
+     borderColor: 'lightblue',
   },
   progressBar: {
      overflow: 'hidden',
      height: 6,
   },
   progressBarLeft: {
-    backgroundColor: 'lightgrey',
+    backgroundColor: 'royalblue',
     borderRadius: 5,
   },
   progressBarRight: {
