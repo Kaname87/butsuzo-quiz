@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     flex: 6,
     backgroundColor: '#f7f7f7',
     justifyContent: 'center',
+    paddingTop: 30,
   },
 });
 export default QuizView;

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   Text,
   View,
-  Alert,
  } from 'react-native';
-import Header from './Header';
 import Quiz from './Quiz';
 import data from './data.json'
 
@@ -130,33 +127,23 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Header />
-        <Quiz
-          isStarted={this.state.isStarted}
-          isFinished={this.state.isFinished}
-          name={this.state.quizSet.name}
-          place={this.state.quizSet.place}
-          currentQuestionNumber={this.state.currentQuestionNumber}
-          isCorrect={this.state.isCorrect}
-          correctNumber={this.state.correctNumber}
-          lastQuestionNumber={lastQuestionNumber}
-          onPressStart={this._onPressStart}
-          onPressQuit={this._onPressQuit}
-          onPressShowReview={this._onPressShowReview}
-          showReview={this.state.showReview}
-          answerOptions={this.state.quizSet.answerOptions}
-          onSelectAnswer={this._onSelectAnswer}
-          showResult={this.state.showResult}
-        />
-      </View>
+      <Quiz
+        isStarted={this.state.isStarted}
+        isFinished={this.state.isFinished}
+        name={this.state.quizSet.name}
+        place={this.state.quizSet.place}
+        currentQuestionNumber={this.state.currentQuestionNumber}
+        isCorrect={this.state.isCorrect}
+        correctNumber={this.state.correctNumber}
+        lastQuestionNumber={lastQuestionNumber}
+        onPressStart={this._onPressStart}
+        onPressQuit={this._onPressQuit}
+        onPressShowReview={this._onPressShowReview}
+        showReview={this.state.showReview}
+        answerOptions={this.state.quizSet.answerOptions}
+        onSelectAnswer={this._onSelectAnswer}
+        showResult={this.state.showResult}
+      />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f7f7f7',
-  },
-});

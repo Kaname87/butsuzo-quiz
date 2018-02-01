@@ -6,17 +6,12 @@ import {
 } from 'react-native';
 
 const Question = ({
-   currentQuestionNumber,
    name,
    place,
 }) => (
   <View style={styles.questionContainer}>
-    <Text style={styles.questionNumber}>第{currentQuestionNumber}門</Text>
-    <Text>
-      <Text style={styles.questionTextMain}>{place}</Text>
-      <Text style={styles.questionTextSub}>の</Text>
-      <Text style={styles.questionTextMain}>{name}</Text>
-    </Text>
+    <Text style={styles.questionTextMain}>{name}</Text>
+    <Text style={styles.questionTextSub}>{place}</Text>
   </View>
 );
 
@@ -26,17 +21,14 @@ const styles = StyleSheet.create({
   questionContainer: {
     flex: 1,
     alignItems: 'center',
-  },
-  questionNumber: {
-    fontSize: 15,
-    marginBottom: 5,
-  },
-  questionTextMain: {
-    fontSize: 25,
-    fontWeight: 'bold',
+    marginTop: 20,
   },
   questionTextSub: {
-    fontSize: 20,
+    fontSize: 18,
+    marginTop: 5,
+  },
+  questionTextMain: {
+    fontSize: 28,
     fontWeight: 'bold',
   },
 });

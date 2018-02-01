@@ -27,26 +27,25 @@ export default class QuizOnGoing extends Component {
 
     return (
       <QuizView>
-        <Question
-          name={this.props.name}
-          place={this.props.place}
-          currentQuestionNumber={this.props.currentQuestionNumber}
-        />
-        <AnswerResult
-          showResult={this.props.showResult}
-          isCorrect={this.props.isCorrect}
-        />
-        <AnswerOptionsList
-          answerOptions={this.props.answerOptions}
-          onSelectAnswer={this.props.onSelectAnswer}
-          showResult={this.props.showResult}
-        />
         <ProgressBar
           progress={this._calcProgress(
             this.props.isFinished,
             this.props.currentQuestionNumber,
             this.props.lastQuestionNumber
           )}
+        />
+        <AnswerResult
+          showResult={this.props.showResult}
+          isCorrect={this.props.isCorrect}
+        />
+        <Question
+          name={this.props.name}
+          place={this.props.place}
+        />
+        <AnswerOptionsList
+          answerOptions={this.props.answerOptions}
+          onSelectAnswer={this.props.onSelectAnswer}
+          showResult={this.props.showResult}
         />
         {button}
       </QuizView>

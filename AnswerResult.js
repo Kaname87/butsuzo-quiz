@@ -28,7 +28,8 @@ export default AnswerResult;
 const styles = StyleSheet.create({
   container: {
     flex: 0.4,
-    marginBottom: 25,
+    marginTop: 10,
+    marginBottom: 10,
     flexDirection:'row',
     justifyContent: 'center',
     alignItems:'center',

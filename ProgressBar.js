@@ -17,23 +17,19 @@ export default ProgressBar;
 
 const styles = StyleSheet.create({
   container: {
-     flex: 0.3,
+     height: 10,
      flexDirection: 'row',
-     borderWidth: 1,
-     borderRadius: 5,
+     borderWidth: 0.5,
      marginBottom: 5,
-     borderColor: 'lightblue',
+     borderColor: 'white',
   },
   progressBar: {
      overflow: 'hidden',
-     height: 6,
   },
   progressBarLeft: {
     backgroundColor: 'royalblue',
-    borderRadius: 5,
   },
   progressBarRight: {
     backgroundColor: 'white',
-    borderRadius: 5,
   }
 });
