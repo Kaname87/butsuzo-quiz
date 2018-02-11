@@ -3,7 +3,7 @@ import {
   Text,
   View,
  } from 'react-native';
-import Quiz from './Quiz';
+import Quiz from './src/components/Quiz';
 import data from './data.json'
 
 const lastQuestionNumber = 3;
