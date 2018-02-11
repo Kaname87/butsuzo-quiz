@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Quiz from '../components/Quiz';
 import {
   startQuiz,
   quitQuiz,
+  clickShowReview,
+  selectAnswer,
 } from '../actions/quiz'
+
 
 // const lastQuestionNumber = 3;
 
@@ -148,19 +150,30 @@ import {
 // }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
-    // isStarted: state.quiz.isStarted,
-    // isFinished: state.quiz.isFinished,
-    isStarted: false,
-    isFinished: false,
+    isStarted: state.quiz.isStarted,
+    isFinished: state.quiz.isFinished,
+
+    currentQuestionNumber: state.quiz.currentQuestionNumber,
+    lastQuestionNumber: state.quiz.lastQuestionNumber,
+
+    showResult: state.quiz.showResult,
+    isCorrect: state.quiz.isCorrect,
+    showReview: state.quiz.showReview,
+
+    // quizset
+    name: state.quiz.name,
+    place: state.quiz.place,
+    answerOptions: state.quiz.answerOptions,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     onPressStart: () => dispatch(startQuiz()),
-    onPressQuit: () => dispatch(quitQuiz())
+    onPressQuit: () => dispatch(quitQuiz()),
+    onPressShowReview: () => dispatch(clickShowReview()),
+    onSelectAnswer: id => dispatch(selectAnswer(id)),
   }
 }
 

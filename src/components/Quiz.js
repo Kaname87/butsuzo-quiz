@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
@@ -58,3 +59,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+Quiz.propTypes = {
+  onPressStart: PropTypes.func.isRequired,
+  onPressQuit: PropTypes.func.isRequired,
+  onPressShowReview: PropTypes.func.isRequired,
+  onSelectAnswer: PropTypes.func.isRequired,
+};
