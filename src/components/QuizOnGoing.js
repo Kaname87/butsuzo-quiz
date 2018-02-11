@@ -1,56 +1,72 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AnswerOptionsList from './AnswerOptionsList';
 import Question from './Question';
-import Header from './Header';
 import ProgressBar from './ProgressBar';
 import AnswerResult from './AnswerResult';
 import Button from './Button';
 import QuizView from './QuizView';
 
-export default class QuizOnGoing extends Component {
+const QuizOnGoing = ({
+  isCorrect,
+  isFinished,
+  onPressShowReview,
+  onPressQuit,
+  onSelectAnswer,
+  currentQuestionNumber,
+  lastQuestionNumber,
+  answerOptions,
+  showResult,
+  name,
+  place,
+}) => {
+  const calcProgress = (isFinished,  currentQuestionNumber, lastQuestionNumber) => (
+    isFinished ? 100 : ((currentQuestionNumber -1) / lastQuestionNumber) * 100
+  )
 
-  _calcProgress(isFinished,  currentQuestionNumber, lastQuestionNumber) {
-    return isFinished ? 100 : ((currentQuestionNumber -1) / lastQuestionNumber) * 100;
-  }
-
-  render() {
-    const button = this.props.isFinished ?
-      <Button
-        onPress={this.props.onPressShowReview}
-        title="結果確認"
-        buttonColor="orange"
-      />
-    : <Button
-        onPress={this.props.onPressQuit}
-        title="中止"
+  const button = isFinished ?
+    <Button
+      onPress={onPressShowReview}
+      title="結果確認"
+      buttonColor="orange"
     />
+  : <Button
+      onPress={onPressQuit}
+      title="中止"
+  />
 
-    return (
-      <QuizView>
-        <ProgressBar
-          progress={this._calcProgress(
-            this.props.isFinished,
-            this.props.currentQuestionNumber,
-            this.props.lastQuestionNumber
-          )}
-        />
-        <AnswerResult
-          showResult={this.props.showResult}
-          isCorrect={this.props.isCorrect}
-        />
-        <Question
-          name={this.props.name}
-          place={this.props.place}
-        />
-        <AnswerOptionsList
-          answerOptions={this.props.answerOptions}
-          onSelectAnswer={this.props.onSelectAnswer}
-          showResult={this.props.showResult}
-        />
-        {button}
-      </QuizView>
-    );
-  }
+  return (
+    <QuizView>
+      <ProgressBar
+        progress={calcProgress(
+          isFinished,
+          currentQuestionNumber,
+          lastQuestionNumber
+        )}
+      />
+      <AnswerResult
+        showResult={showResult}
+        isCorrect={isCorrect}
+      />
+      <Question
+        name={name}
+        place={place}
+      />
+      <AnswerOptionsList
+        answerOptions={answerOptions}
+        onSelectAnswer={onSelectAnswer}
+        showResult={showResult}
+      />
+      {button}
+    </QuizView>
+  );
 };
 
-// export default QuizOnGoing;
+export default QuizOnGoing;
+
+QuizOnGoing.propTypes = {
+  answerOptions: PropTypes.array.isRequired,
+  onPressQuit: PropTypes.func.isRequired,
+  onPressShowReview: PropTypes.func.isRequired,
+  onSelectAnswer: PropTypes.func.isRequired,
+};
