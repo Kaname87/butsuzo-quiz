@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
@@ -48,3 +49,15 @@ const Button = ({
 };
 
 export default Button;
+
+Button.defaultProps = {
+  labelColor: 'white',
+  buttonColor: 'grey',
+};
+
+Button.propTypes = {
+  title: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+  labelColor: PropTypes.string,
+  buttonColor: PropTypes.string,
+};
