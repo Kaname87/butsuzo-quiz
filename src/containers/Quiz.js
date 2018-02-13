@@ -5,7 +5,7 @@ import {
   quitQuiz,
   clickShowReview,
   selectAnswer,
-} from '../actions/quiz'
+} from '../actions/quiz';
 
 
 // const lastQuestionNumber = 3;
@@ -165,8 +165,8 @@ const mapStateToProps = state => {
     name: state.quiz.name,
     place: state.quiz.place,
     answerOptions: state.quiz.answerOptions,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -174,10 +174,10 @@ const mapDispatchToProps = dispatch => {
     onPressQuit: () => dispatch(quitQuiz()),
     onPressShowReview: () => dispatch(clickShowReview()),
     onSelectAnswer: id => dispatch(selectAnswer(id)),
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Quiz)
+)(Quiz);
