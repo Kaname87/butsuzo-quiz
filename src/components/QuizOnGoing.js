@@ -82,4 +82,6 @@ QuizOnGoing.propTypes = {
   isFinished: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   place: PropTypes.string.isRequired,
+  currentQuestionNumber: PropTypes.number.isRequired,
+  lastQuestionNumber: PropTypes.number.isRequired,
 };

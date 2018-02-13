@@ -16,6 +16,8 @@ it('renders without crashing', () => {
     isFinished={false}
     name="test name"
     place="test place"
+    currentQuestionNumber={1}
+    lastQuestionNumber={100}
   />).toJSON();
   expect(rendered).toBeTruthy();
 });
