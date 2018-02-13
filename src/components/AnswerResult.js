@@ -5,7 +5,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import Button from './Button';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,8 +32,6 @@ const styles = StyleSheet.create({
 const AnswerResult = ({
   showResult,
   isCorrect,
-  isFinished,
-  onPressNext,
 }) => {
   if (!showResult) {
     return (
@@ -51,21 +48,10 @@ const AnswerResult = ({
   } else {
     resultText = <Text style={styles.wrong}>×</Text>;
   }
-  let button = null;
-  if (!isFinished) {
-    button = (
-      <Button
-        onPress={onPressNext}
-        title="次"
-        buttonColor="orange"
-      />
-    );
-  }
 
   return (
     <View style={styles.container}>
       {resultText}
-      {button}
     </View>
   );
 };
@@ -75,6 +61,4 @@ export default AnswerResult;
 AnswerResult.propTypes = {
   showResult: PropTypes.bool.isRequired,
   isCorrect: PropTypes.bool.isRequired,
-  isFinished: PropTypes.bool.isRequired,
-  onPressNext: PropTypes.func.isRequired,
 };

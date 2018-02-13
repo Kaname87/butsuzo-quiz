@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 import AnswerOptionsList from './AnswerOptionsList';
 import Question from './Question';
 import ProgressBar from './ProgressBar';
@@ -7,6 +8,7 @@ import AnswerResult from './AnswerResult';
 import Button from './Button';
 import CancelButton from './CancelButton';
 import QuizNavi from './QuizNavi';
+import QuizButtom from './QuizButtom';
 import QuizView from './QuizView';
 
 const QuizOnGoing = ({
@@ -27,12 +29,20 @@ const QuizOnGoing = ({
     isFinished ? 100 : ((currentQuestionNumber - 1) / lastQuestionNumber) * 100
   );
 
-  let button = null;
+  let button = <View />;
   if (isFinished) {
     button = (
       <Button
         onPress={onPressShowReview}
         title="結果確認"
+        buttonColor="orange"
+      />
+    );
+  } else if (showResult) {
+    button = (
+      <Button
+        onPress={onPressNext}
+        title="次問題"
         buttonColor="orange"
       />
     );
@@ -53,10 +63,8 @@ const QuizOnGoing = ({
         )}
       />
       <AnswerResult
-        isFinished={isFinished}
         showResult={showResult}
         isCorrect={isCorrect}
-        onPressNext={onPressNext}
       />
       <Question
         name={name}
@@ -67,7 +75,9 @@ const QuizOnGoing = ({
         onSelectAnswer={onSelectAnswer}
         showResult={showResult}
       />
-      {button}
+      <QuizButtom>
+        {button}
+      </QuizButtom>
     </QuizView>
   );
 };
