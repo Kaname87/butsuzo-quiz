@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   View,
@@ -44,3 +45,9 @@ export default class AnswerOptionsList extends Component {
     );
   }
 }
+
+AnswerOptionsList.propTypes = {
+  onSelectAnswer: PropTypes.func.isRequired,
+  showResult: PropTypes.bool.isRequired,
+  answerOptions: PropTypes.array.isRequired,
+};
