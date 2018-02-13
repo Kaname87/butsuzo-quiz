@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import AnswerOptionsList from './AnswerOptionsList';
 import Question from './Question';
@@ -20,20 +20,24 @@ const QuizOnGoing = ({
   name,
   place,
 }) => {
-  const calcProgress = (isFinished,  currentQuestionNumber, lastQuestionNumber) => (
-    isFinished ? 100 : ((currentQuestionNumber -1) / lastQuestionNumber) * 100
-  )
+  const calcProgress = (isFinished, currentQuestionNumber, lastQuestionNumber) => (
+    isFinished ? 100 : ((currentQuestionNumber - 1) / lastQuestionNumber) * 100
+  );
 
   const button = isFinished ?
-    <Button
-      onPress={onPressShowReview}
-      title="結果確認"
-      buttonColor="orange"
-    />
-  : <Button
-      onPress={onPressQuit}
-      title="中止"
-  />
+    (
+      <Button
+        onPress={onPressShowReview}
+        title="結果確認"
+        buttonColor="orange"
+      />
+    ) :
+    (
+      <Button
+        onPress={onPressQuit}
+        title="中止"
+      />
+    );
 
   return (
     <QuizView>

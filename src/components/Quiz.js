@@ -8,6 +8,14 @@ import QuizStart from './QuizStart';
 import QuizOnGoing from './QuizOnGoing';
 import QuizReview from './QuizReview';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 6,
+    backgroundColor: '#f7f7f7',
+    justifyContent: 'center',
+  },
+});
+
 const Quiz = ({
   onPressStart,
   onPressQuit,
@@ -35,21 +43,21 @@ const Quiz = ({
       />
     );
   } else if (isStarted) {
-      main = (
-        <QuizOnGoing
-          isFinished={isFinished}
-          name={name}
-          place={place}
-          currentQuestionNumber={currentQuestionNumber}
-          lastQuestionNumber={lastQuestionNumber}
-          answerOptions={answerOptions}
-          onSelectAnswer={onSelectAnswer}
-          showResult={showResult}
-          isCorrect={isCorrect}
-          onPressQuit={onPressQuit}
-          onPressShowReview={onPressShowReview}
-        />
-      );
+    main = (
+      <QuizOnGoing
+        isFinished={isFinished}
+        name={name}
+        place={place}
+        currentQuestionNumber={currentQuestionNumber}
+        lastQuestionNumber={lastQuestionNumber}
+        answerOptions={answerOptions}
+        onSelectAnswer={onSelectAnswer}
+        showResult={showResult}
+        isCorrect={isCorrect}
+        onPressQuit={onPressQuit}
+        onPressShowReview={onPressShowReview}
+      />
+    );
   } else {
     main = (
       <QuizStart
@@ -64,14 +72,6 @@ const Quiz = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 6,
-    backgroundColor: '#f7f7f7',
-    justifyContent: 'center',
-  },
-});
 
 export default Quiz;
 

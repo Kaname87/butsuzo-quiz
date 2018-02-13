@@ -1,7 +1,6 @@
 import React from 'react';
-import Quiz from './Quiz';
-
 import renderer from 'react-test-renderer';
+import Quiz from './Quiz';
 
 it('renders without crashing', () => {
   const tmpFuc = () => {};
@@ -10,6 +9,6 @@ it('renders without crashing', () => {
     onPressQuit={tmpFuc}
     onPressShowReview={tmpFuc}
     onSelectAnswer={tmpFuc}
-    />).toJSON();
+  />).toJSON();
   expect(rendered).toBeTruthy();
 });

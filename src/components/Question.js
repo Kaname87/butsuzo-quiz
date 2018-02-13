@@ -5,18 +5,6 @@ import {
   View,
 } from 'react-native';
 
-const Question = ({
-   name,
-   place,
-}) => (
-  <View style={styles.questionContainer}>
-    <Text style={styles.questionTextMain}>{name}</Text>
-    <Text style={styles.questionTextSub}>{place}</Text>
-  </View>
-);
-
-export default Question;
-
 const styles = StyleSheet.create({
   questionContainer: {
     flex: 1,
@@ -32,3 +20,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+const Question = ({
+  name,
+  place,
+}) => (
+  <View style={styles.questionContainer}>
+    <Text style={styles.questionTextMain}>{name}</Text>
+    <Text style={styles.questionTextSub}>{place}</Text>
+  </View>
+);
+
+export default Question;

@@ -7,6 +7,20 @@ import {
 import Button from './Button';
 import QuizView from './QuizView';
 
+const styles = StyleSheet.create({
+  textContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  text: {
+    fontSize: 20,
+  },
+  textBold: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
+
 const QuizFinished = ({
   onPressStart,
   correctNumber,
@@ -29,17 +43,4 @@ const QuizFinished = ({
   </QuizView>
 );
 
-const styles = StyleSheet.create({
-  textContainer: {
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  text: {
-    fontSize: 20,
-  },
-  textBold: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  }
-});
 export default QuizFinished;

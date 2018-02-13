@@ -1,9 +1,4 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
 import Button from './Button';
 import QuizView from './QuizView';
 import Title from './Title';

@@ -4,14 +4,6 @@ import {
   View,
 } from 'react-native';
 
-const QuizView = ({
-  children,
-}) => (
-  <View style={styles.container}>
-    {children}
-  </View>
-);
-
 const styles = StyleSheet.create({
   container: {
     flex: 6,
@@ -20,4 +12,12 @@ const styles = StyleSheet.create({
     paddingTop: 30,
   },
 });
+
+const QuizView = ({
+  children,
+}) => (
+  <View style={styles.container}>
+    {children}
+  </View>
+);
 export default QuizView;
