@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const QuizFinished = ({
+const QuizReview = ({
   onPressStart,
   correctNumber,
   lastQuestionNumber,
@@ -43,4 +44,10 @@ const QuizFinished = ({
   </QuizView>
 );
 
-export default QuizFinished;
+export default QuizReview;
+
+QuizReview.propTypes = {
+  onPressStart: PropTypes.func.isRequired,
+  correctNumber: PropTypes.number.isRequired,
+  lastQuestionNumber: PropTypes.number.isRequired,
+};

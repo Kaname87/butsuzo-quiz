@@ -157,6 +157,7 @@ const mapStateToProps = state => {
 
     currentQuestionNumber: state.quiz.currentQuestionNumber,
     lastQuestionNumber: state.quiz.lastQuestionNumber,
+    correctNumber: state.quiz.correctNumber,
 
     showResult: state.quiz.showResult,
     isCorrect: state.quiz.isCorrect,

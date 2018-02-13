@@ -10,6 +10,8 @@ it('renders without crashing', () => {
     onPressShowReview={tmpFuc}
     onPressNext={tmpFuc}
     onSelectAnswer={tmpFuc}
+    isStarted={false}
+    isFinished={false}
   />).toJSON();
   expect(rendered).toBeTruthy();
 });

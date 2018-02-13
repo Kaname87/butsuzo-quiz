@@ -77,10 +77,32 @@ const Quiz = ({
 
 export default Quiz;
 
+Quiz.defaultProps = {
+  lastQuestionNumber: 0,
+  correctNumber: 0,
+  currentQuestionNumber: 0,
+  isCorrect: false,
+  showReview: false,
+  showResult: false,
+  name: '',
+  place: '',
+  answerOptions: [],
+};
 Quiz.propTypes = {
   onPressStart: PropTypes.func.isRequired,
   onPressQuit: PropTypes.func.isRequired,
   onPressShowReview: PropTypes.func.isRequired,
   onPressNext: PropTypes.func.isRequired,
   onSelectAnswer: PropTypes.func.isRequired,
+  lastQuestionNumber: PropTypes.number,
+  correctNumber: PropTypes.number,
+  currentQuestionNumber: PropTypes.number,
+  isCorrect: PropTypes.bool,
+  showReview: PropTypes.bool,
+  showResult: PropTypes.bool,
+  isStarted: PropTypes.bool.isRequired,
+  isFinished: PropTypes.bool.isRequired,
+  name: PropTypes.string,
+  place: PropTypes.string,
+  answerOptions: PropTypes.array,
 };
