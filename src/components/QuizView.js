@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   View,
@@ -21,3 +22,7 @@ const QuizView = ({
   </View>
 );
 export default QuizView;
+
+QuizView.propTypes = {
+  children: PropTypes.node.isRequired,
+};
