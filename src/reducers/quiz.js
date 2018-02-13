@@ -13,7 +13,7 @@ const initialState = {
 const quizReducer = (state = initialState, action) => {
   switch (action.type) {
   case 'START_QUIZ':
-    const quizSet = getNewQuizSet(0);
+    const initialQuizSet = getNewQuizSet(0);
     return {
       ...state,
       isStarted: true,
@@ -27,10 +27,10 @@ const quizReducer = (state = initialState, action) => {
 
       // TODO: quizset should be fetched via api
       // and can be another state
-      name: quizSet.name,
-      place: quizSet.place,
-      answer: quizSet.answer,
-      answerOptions: quizSet.answerOptions,
+      name: initialQuizSet.name,
+      place: initialQuizSet.place,
+      answer: initialQuizSet.answer,
+      answerOptions: initialQuizSet.answerOptions,
     };
 
   case 'QUIT_QUIZ':
@@ -51,6 +51,20 @@ const quizReducer = (state = initialState, action) => {
       ...state,
       isCorrect: state.answer === action.id,
       showResult: true,
+      isFinished: state.currentQuestionNumber === state.lastQuestionNumber,
+    };
+
+  case 'NEXT_QUESTION':
+    const nextQuizSet = getNewQuizSet(state.currentQuestionNumber);
+    return {
+      ...state,
+      currentQuestionNumber: state.currentQuestionNumber + 1,
+      isCorrect: false,
+      showResult: false,
+      name: nextQuizSet.name,
+      place: nextQuizSet.place,
+      answer: nextQuizSet.answer,
+      answerOptions: nextQuizSet.answerOptions,
     };
 
   default:

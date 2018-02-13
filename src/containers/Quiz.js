@@ -5,6 +5,7 @@ import {
   quitQuiz,
   clickShowReview,
   selectAnswer,
+  nextQuestion,
 } from '../actions/quiz';
 
 
@@ -174,6 +175,7 @@ const mapDispatchToProps = dispatch => {
     onPressQuit: () => dispatch(quitQuiz()),
     onPressShowReview: () => dispatch(clickShowReview()),
     onSelectAnswer: id => dispatch(selectAnswer(id)),
+    onPressNext: id => dispatch(nextQuestion()),
   };
 };
 

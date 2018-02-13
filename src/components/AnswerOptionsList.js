@@ -34,7 +34,7 @@ export default class AnswerOptionsList extends Component {
 
   render () {
     const options = this.props.answerOptions.map(option => {
-      return this._makeAnswerOption(option)
+      return this._makeAnswerOption(option);
     });
 
     return (

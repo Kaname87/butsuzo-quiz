@@ -13,6 +13,7 @@ const QuizOnGoing = ({
   onPressShowReview,
   onPressQuit,
   onSelectAnswer,
+  onPressNext,
   currentQuestionNumber,
   lastQuestionNumber,
   answerOptions,
@@ -49,8 +50,10 @@ const QuizOnGoing = ({
         )}
       />
       <AnswerResult
+        isFinished={isFinished}
         showResult={showResult}
         isCorrect={isCorrect}
+        onPressNext={onPressNext}
       />
       <Question
         name={name}
@@ -73,4 +76,8 @@ QuizOnGoing.propTypes = {
   onPressQuit: PropTypes.func.isRequired,
   onPressShowReview: PropTypes.func.isRequired,
   onSelectAnswer: PropTypes.func.isRequired,
+  onPressNext: PropTypes.func.isRequired,
+  showResult: PropTypes.bool.isRequired,
+  isCorrect: PropTypes.bool.isRequired,
+  isFinished: PropTypes.bool.isRequired,
 };

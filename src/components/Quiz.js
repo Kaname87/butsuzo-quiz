@@ -21,6 +21,7 @@ const Quiz = ({
   onPressQuit,
   onPressShowReview,
   onSelectAnswer,
+  onPressNext,
   isCorrect,
   showReview,
   showResult,
@@ -56,6 +57,7 @@ const Quiz = ({
         isCorrect={isCorrect}
         onPressQuit={onPressQuit}
         onPressShowReview={onPressShowReview}
+        onPressNext={onPressNext}
       />
     );
   } else {
@@ -79,5 +81,6 @@ Quiz.propTypes = {
   onPressStart: PropTypes.func.isRequired,
   onPressQuit: PropTypes.func.isRequired,
   onPressShowReview: PropTypes.func.isRequired,
+  onPressNext: PropTypes.func.isRequired,
   onSelectAnswer: PropTypes.func.isRequired,
 };

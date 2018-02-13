@@ -22,3 +22,9 @@ export const selectAnswer = id => (
     id,
   }
 );
+
+export const nextQuestion = () => (
+  {
+    type: 'NEXT_QUESTION',
+  }
+);

@@ -8,6 +8,7 @@ it('renders without crashing', () => {
     onPressStart={tmpFuc}
     onPressQuit={tmpFuc}
     onPressShowReview={tmpFuc}
+    onPressNext={tmpFuc}
     onSelectAnswer={tmpFuc}
   />).toJSON();
   expect(rendered).toBeTruthy();
