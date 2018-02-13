@@ -13,15 +13,15 @@ const styles = StyleSheet.create({
   },
 });
 
-const QuizButtom = ({
+const QuizBottom = ({
   children,
 }) => (
   <View style={styles.container}>
     {children}
   </View>
 );
-export default QuizButtom;
+export default QuizBottom;
 
-QuizButtom.propTypes = {
-  children: PropTypes.node.isRequired,
+QuizBottom.propTypes = {
+  children: PropTypes.node,
 };
