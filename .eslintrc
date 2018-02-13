@@ -1,14 +1,13 @@
 {
   "extends": [
     "react",
-    "plugin:react-native/all"
   ],
   "rules": {
     "react/prop-types": ["warn"],
     "indent": ["error", 2],
+    "comma-dangle": ["error", "always-multiline"],
   },
-  "plugins": [
-    "react",
-    "react-native"
-  ]
+  "env": {
+    "browser": true,
+  },
 }
