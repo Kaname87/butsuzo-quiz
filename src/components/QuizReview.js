@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
@@ -7,7 +8,21 @@ import {
 import Button from './Button';
 import QuizView from './QuizView';
 
-const QuizFinished = ({
+const styles = StyleSheet.create({
+  textContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  text: {
+    fontSize: 20,
+  },
+  textBold: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
+
+const QuizReview = ({
   onPressStart,
   correctNumber,
   lastQuestionNumber,
@@ -29,17 +44,10 @@ const QuizFinished = ({
   </QuizView>
 );
 
-const styles = StyleSheet.create({
-  textContainer: {
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  text: {
-    fontSize: 20,
-  },
-  textBold: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  }
-});
-export default QuizFinished;
+export default QuizReview;
+
+QuizReview.propTypes = {
+  onPressStart: PropTypes.func.isRequired,
+  correctNumber: PropTypes.number.isRequired,
+  lastQuestionNumber: PropTypes.number.isRequired,
+};

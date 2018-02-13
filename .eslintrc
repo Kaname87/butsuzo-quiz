@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "react",
+  ],
+  "rules": {
+    "react/prop-types": ["warn"],
+    "indent": ["error", 2],
+    "comma-dangle": ["error", "always-multiline"],
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+  },
+}
