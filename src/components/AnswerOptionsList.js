@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   StyleSheet,
@@ -18,33 +18,37 @@ const styles = StyleSheet.create({
 const optionHeight = 170;
 const optionWidth = 170;
 
-export default class AnswerOptionsList extends Component {
-  _makeAnswerOption (option) {
-    return (
-      <AnswerOption
-        key={option.id}
-        onSelectAnswer={this.props.onSelectAnswer}
-        showResult={this.props.showResult}
-        width={optionHeight}
-        height={optionWidth}
-        id={option.id}
-        uri={option.uri}
-      />
-    );
-  }
+const makeAnswerOption = (option, onSelectAnswer, showResult) => {
+  return (
+    <AnswerOption
+      key={option.id}
+      onSelectAnswer={onSelectAnswer}
+      showResult={showResult}
+      width={optionHeight}
+      height={optionWidth}
+      id={option.id}
+      uri={option.uri}
+    />
+  );
+};
 
-  render () {
-    const options = this.props.answerOptions.map(option => {
-      return this._makeAnswerOption(option);
-    });
+const AnswerOptionsList = ({
+  onSelectAnswer,
+  showResult,
+  answerOptions,
+}) => {
+  const options = answerOptions.map(option => {
+    return makeAnswerOption(option, onSelectAnswer, showResult);
+  });
 
-    return (
-      <View style={styles.container}>
-        {options}
-      </View>
-    );
-  }
-}
+  return (
+    <View style={styles.container}>
+      {options}
+    </View>
+  );
+};
+
+export default AnswerOptionsList;
 
 AnswerOptionsList.propTypes = {
   onSelectAnswer: PropTypes.func.isRequired,
