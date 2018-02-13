@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "react",
+    "plugin:react-native/all"
+  ],
+  "rules": {
+    "react/prop-types": ["warn"],
+    "indent": ["error", 2],
+  },
+  "plugins": [
+    "react",
+    "react-native"
+  ]
+}
