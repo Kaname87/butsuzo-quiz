@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 import QuizView from './QuizView';
 import Title from './Title';
@@ -16,3 +17,7 @@ const QuizStart = ({
   </QuizView>
 );
 export default QuizStart;
+
+QuizStart.propTypes = {
+  onPressStart: PropTypes.func.isRequired,
+};
