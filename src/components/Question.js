@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Text,
@@ -32,3 +33,8 @@ const Question = ({
 );
 
 export default Question;
+
+Question.propTypes = {
+  name: PropTypes.string.isRequired,
+  place: PropTypes.string.isRequired,
+};

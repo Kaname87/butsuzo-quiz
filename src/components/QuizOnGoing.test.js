@@ -14,6 +14,8 @@ it('renders without crashing', () => {
     showResult={false}
     isCorrect={false}
     isFinished={false}
+    name="test name"
+    place="test place"
   />).toJSON();
   expect(rendered).toBeTruthy();
 });

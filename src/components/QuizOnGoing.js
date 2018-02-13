@@ -80,4 +80,6 @@ QuizOnGoing.propTypes = {
   showResult: PropTypes.bool.isRequired,
   isCorrect: PropTypes.bool.isRequired,
   isFinished: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  place: PropTypes.string.isRequired,
 };
