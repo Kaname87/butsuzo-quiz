@@ -17,6 +17,7 @@ const quizReducer = (state = initialState, action) => {
     return {
       ...state,
       isStarted: true,
+      isFinished: false,
 
       currentQuestionNumber: 1,
       lastQuestionNumber: 3,
