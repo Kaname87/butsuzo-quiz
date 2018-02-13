@@ -5,6 +5,8 @@ import Question from './Question';
 import ProgressBar from './ProgressBar';
 import AnswerResult from './AnswerResult';
 import Button from './Button';
+import CancelButton from './CancelButton';
+import QuizNavi from './QuizNavi';
 import QuizView from './QuizView';
 
 const QuizOnGoing = ({
@@ -25,23 +27,24 @@ const QuizOnGoing = ({
     isFinished ? 100 : ((currentQuestionNumber - 1) / lastQuestionNumber) * 100
   );
 
-  const button = isFinished ?
-    (
+  let button = null;
+  if (isFinished) {
+    button = (
       <Button
         onPress={onPressShowReview}
         title="結果確認"
         buttonColor="orange"
       />
-    ) :
-    (
-      <Button
-        onPress={onPressQuit}
-        title="中止"
-      />
     );
+  }
 
   return (
     <QuizView>
+      <QuizNavi>
+        <CancelButton
+          onPress={onPressQuit}
+        />
+      </QuizNavi>
       <ProgressBar
         progress={calcProgress(
           isFinished,
